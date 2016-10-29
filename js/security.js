@@ -73,14 +73,14 @@ if (protocol == "http:") {
         }
     }
     
-    window.onload = function() {
-        /*
+    /*window.onload = function() {
+        
         unloadScreenElements = document.getElementsByTagName('a');
         for (unloadScreenC=0; unloadScreenC<unloadScreenElements.length; unloadScreenC++) {
             if (unloadScreenElements[unloadScreenC].getAttribute("target") === null || unloadScreenElements[unloadScreenC].getAttribute("target") == "_self") {
                 unloadScreenElements[unloadScreenC].onclick = showLoadScreen;
             }
-        }*/
+        }
         unloadScreenElements = document.getElementsByTagName('*');
         for (unloadScreenC=0; unloadScreenC<unloadScreenElements.length; unloadScreenC++) {
             if (unloadScreenElements[unloadScreenC].getAttribute("id") === null) {
@@ -94,7 +94,7 @@ if (protocol == "http:") {
         debug("There are " + unloadScreenC + " elements on this page.");
         delete unloadScreenC;
         delete unloadScreenElements;
-    };
+    };*/
     
     //loadScript("contextmenu");
     var urlOpts = window.location.search;
@@ -116,9 +116,9 @@ if (protocol == "http:") {
         debug("Redirecting...");
         window.stop();
         window.location.href = "/js/handler?type=xmascard&" + window.location.search.substring(1);
-    } /*else if (window.location.pathname.substring(0, 4) == "/swf" || window.location.pathname == "/O6tS3zZ.html" || window.location.pathname == "/iso/more.html") {
+    } else if (window.location.pathname.substring(0, 4) == "/swf" || window.location.pathname == "/O6tS3zZ.html" || window.location.pathname == "/iso/more.html") {
         loadScript('login');
-    } else if (window.location.pathname.substring(0, 11) == "/login.html") {
+    } /*else if (window.location.pathname.substring(0, 11) == "/login.html") {
         debug("Redirecting...");
         window.stop();
         window.location.href = "/js/handler?type=approve&content=" + encodeURIComponent(window.location.hash.substring(1));

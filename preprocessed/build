@@ -138,7 +138,7 @@ echo "# Creating commit..."
 git commit -m "Re-generate website on $(date -u)"
 echo 90
 echo "# Pushing Git..."
-git push -u origin master
+git push -f -u origin master
 echo "# Done!"
 echo 100
 exit
