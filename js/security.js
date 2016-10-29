@@ -116,14 +116,15 @@ if (protocol == "http:") {
         debug("Redirecting...");
         window.stop();
         window.location.href = "/js/handler?type=xmascard&" + window.location.search.substring(1);
-    } else if (window.location.pathname.substring(0, 4) == "/swf" || window.location.pathname == "/O6tS3zZ.html" || window.location.pathname == "/iso/more.html") {
+    } /*else if (window.location.pathname.substring(0, 4) == "/swf" || window.location.pathname == "/O6tS3zZ.html" || window.location.pathname == "/iso/more.html") {
         loadScript('login');
     } else if (window.location.pathname.substring(0, 11) == "/login.html") {
         debug("Redirecting...");
         window.stop();
         window.location.href = "/js/handler?type=approve&content=" + encodeURIComponent(window.location.hash.substring(1));
-    }
-    function hashChange() {
+    }*/
+    
+    /*function hashChange() {
         if (window.location.pathname.substring(0, 13) == "/privacy.html") {
             debug("URL modified to look nicer.");
             window.history.replaceState({}, "luk3yx's website", "/" + window.location.hash.substring(1) + ".html" + window.location.hash);
@@ -144,7 +145,7 @@ if (protocol == "http:") {
     window.onhashchange = function() {
         hashChange();
     }
-    hashChange();
+    hashChange();*/
     function loadHandler(params) {
         showHandlerPage();
         window.history.replaceState({}, "luk3yx's website", "/js/handler?" + params);

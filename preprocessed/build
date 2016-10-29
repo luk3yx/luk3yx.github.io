@@ -54,8 +54,8 @@ function build {
     }
     
     rm "$out"
-    year=$(date +%Y)
-    date="Last modification date: "$(date -u)'<br/>'
+    year=$(date -u +%Y)
+    #date="Last modification date: "$(date -u)'<br/>'
     while IFS='' read -r line; do
         if [ "$line" = "$string" ]; then
             hit
@@ -70,7 +70,8 @@ function build {
             echo "$pline" >> "$out"
         else
             pline="${line//<!--YEAR -->/$year }"
-            pline="${pline//<!--DATE-->/$date}"
+            #pline="${pline//<!--DATE-->/$date}"
+            pline="${pline//<!--DATE-->/}"
             echo "$pline" >> "$out"
         fi
     done < "$template"
