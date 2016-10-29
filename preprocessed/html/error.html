@@ -1,0 +1,84 @@
+<!--
+    Something bad happened
+-->
+<div class="hashshow" id="general">
+    <h1>
+        An error has occurred.
+    </h1>
+    <p>
+        <button onclick="document.getElementById('tryagain').click();">
+            Try again
+        </button>
+    </p>
+</div>
+
+<div class="hashshow" id="e410">
+    <h1>
+        410 error
+    </h1>
+    <p>
+        The page you requested has been deleted.
+        <br/>
+        It will probably <b>never come back</b>.
+    </p>
+</div>
+
+<div class="hashshow" id="e404">
+    <h1>
+        404 error
+    </h1>
+    <p>
+        The page you requested was not found.
+    </p>
+</div>
+
+<div class="hashshow" id="e403">
+    <h1>
+        403 error
+    </h1>
+    <p>
+        Access Denied.
+    </p>
+</div>
+
+
+<div class="hashshow" id="gameover" onclick="return false;">
+    <center>
+        <h1>
+            GAME OVER
+        </h1>
+    </center>
+</div>
+
+<div class="hashshow" id="nocss">
+    <h1>
+        CSS error
+    </h1>
+    <p>
+        You appear to have CSS disabled. Please enable CSS.
+    </p>
+</div>
+
+<br/>
+
+We are sorry for any inconvenience this may cause
+
+<br/>
+Please select one of the below options.
+<ul>
+    <li>
+        <a href="javascript:window.history.go(-2)" class="button">
+            Go back.
+        </a>
+    </li>
+    <li>
+        <a href="/" class="button">
+            Go to the homepage.
+        </a>
+    </li>
+    <li>
+        <a href="javascript:window.location.href = document.referrer;" class="button" id="tryagain">
+            Try again.
+        </a>
+    </li>
+</ul>

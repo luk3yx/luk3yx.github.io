@@ -1,0 +1,38 @@
+#!/bin/bash
+# Simple template builder
+# Copyrigt 2016 by luk3yx.
+# All rights reserved.
+cd ..
+string="Welcome to luk3yx's Website! Use the label at the top of the page to go to the homepage. Please enjoy our free services as much as I enjoyed putting them up - Welcome to luk3yx's"
+c=1
+length=19
+delay=100
+startdelay=1000
+enddelay=100
+start=''
+  end=''
+echo '// Copyright 2016 by luk3yx. All rights reserved' > ticker.js
+delay2="$startdelay"
+let c2=c+length
+while [ "$c2" -le "${#string}" ]; do
+    let cp1=c+1
+    str=$(echo "$string" | cut -c "$c-$c2")
+    str="$start$str$end"
+    echo "$str"
+    cat >> ticker.js <<EOF
+function line$c() {
+    document.getElementById('title').innerHTML = "$str";
+    setTimeout(line$cp1, $delay2);
+}
+EOF
+    let c=c+1
+    let c2=c+length
+    delay2="$delay"
+done
+cat >> ticker.js <<EOF
+function line$c() {
+    setTimeout(line1, $enddelay);
+}
+line1();
+// Text: $string
+EOF

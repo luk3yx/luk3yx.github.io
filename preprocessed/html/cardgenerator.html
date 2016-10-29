@@ -1,0 +1,57 @@
+<h1>
+    Birthday/Christmas Card Generator
+    <small>
+        <small>
+        Thanks to
+            <a href="/index.html">
+                luk3yx.
+            </a>
+        </small>
+    </small>
+</h1>
+<form action="/js/handler" method="get" target="_blank">
+    <p>
+        Type:
+        <select name="type">
+            <option value="xmascard">A Christmas card</option>
+            <option value="birthdaycard">A birthday card</option>
+        </select><br/>
+        To: <input type="text" name="to" size="15" /><br/>
+        From: <input type="text" name="from" size="15" /><br/>
+        Text Colour:
+        <select name="colour">
+            <option value="black">Black</option>
+            <option value="brown">Brown</option>
+            <option value="red">Red</option>
+            <option value="orange">Orange</option>
+            <option value="yellow">Yellow</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="pink">Pink</option>
+            <option value="white">White</option>
+        </select><br/>
+        Background Image:
+        <select id="xmasimg" name="img">
+            <option value="">None, or a custom URL stated below.</option>
+            <option value="4" disabled="disabled">--- Christmas Card Images ---</option>
+            <option value="xmas1">Dark Blue with snowflakes in an inverted-wave pattern.</option>
+            <option value="xmas2">Light blue (dark around edges) with scattered snowflakes.</option>
+            <option value="xmas3">Light red (dark around edges) with scattered snowflakes.</option>
+            <option value="xmas4">Red background with christmas tree (made of white ovals) to left.</option>
+            <option value="xmas5">Dark red with snowflakes in a wave pattern.</option>
+            <option value="xmas6">A night scene, blue in middle, black on edges, snow on bottom, and tree to right.</option>
+            <option value="5" disabled="disabled">--- Birthday Card Images ---</option>
+            <option value="birthday1">Baloons to left, happy birthday up top, and blue -&gt; pink gradient background.</option>
+            <option value="birthday2">Red background with presents &amp; snowflakes to right.</option>
+            <option value="birthday3">Randomly coloured/colored circles with happy birthday text up top-left.</option>
+        </select> 
+        <br/>
+        ...Alternatively a URL: <input type="text" id="xmasimgurl" name="imgurl" size="15" />
+        <br/>
+        Message: (Supports HTML code)
+        <br/>
+        <textarea id="xmasmsg" name="msg" cols="30" rows="5"></textarea>
+        <br/>
+        <input type="submit" name="submit" value="Generate!" />
+    </p>
+</form>
