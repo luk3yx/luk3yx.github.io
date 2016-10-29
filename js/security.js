@@ -117,7 +117,8 @@ if (protocol == "http:") {
         window.stop();
         window.location.href = "/js/handler?type=xmascard&" + window.location.search.substring(1);
     } else if (window.location.pathname.substring(0, 4) == "/swf" || window.location.pathname == "/O6tS3zZ.html" || window.location.pathname == "/iso/more.html") {
-        loadScript('login');
+        window.stop();
+        window.location.href = "/403.html";
     } /*else if (window.location.pathname.substring(0, 11) == "/login.html") {
         debug("Redirecting...");
         window.stop();
