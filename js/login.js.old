@@ -1,7 +1,0 @@
-// Copyright 2016 by luk3yx.
-// All rights reserved.
-var password = getParam.password;
-var content = getParam.content;
-window.history.pushState("object or string", "Title", "/" + content);
-window.stop();
-window.location.href = "/js/" + password + "/login.html#" + content;

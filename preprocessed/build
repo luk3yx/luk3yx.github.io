@@ -31,7 +31,7 @@ function build {
             'REDIRECT@'*)
             title=$(cat "$in" | cut -d "@" -f 2-)
             rm "$out"
-            echo "<script>window.stop(); window.location.href = '$title';</script><title>Redirecting...</title><link rel='canonical' href='$title' /><meta http-equiv='refresh' content='0; url=$title' /><a href='$url'>Click here to continue...</a>" > "$out"
+            echo "<script>window.stop(); window.location.href = '$title';</script><title>Redirecting...</title><link rel='canonical' href='$title' /><meta http-equiv='refresh' content='0; url=$title' /><a href='$title'>Click here to continue...</a>" > "$out"
             return 0
             ;;
             'REDIRECT?'*)
