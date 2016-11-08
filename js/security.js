@@ -20,10 +20,12 @@ debug("Security loaded on " + siteurl + ". Scanning...");
 if (siteurl !== window.location.hostname && "translate.google.com" !== window.location.hostname && "translate.googleusercontent.com" !== window.location.hostname)  {
 window.stop();
 debug("This site is presumed to be fake, as actual URL is " + window.location.hostname + '.');
+    alert("Redirecting...")
 redirect();
 } else {
 if (protocol == "http:") {
     debug("Warning! You are not using a secure protocol. You will now be switched to https.")
+    alert("Changing you to HTTPS...")
     redirect();
 } else {
     debug("All clear");
