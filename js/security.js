@@ -109,7 +109,15 @@ if (protocol == "http:") {
         window.history.replaceState({}, "luk3yx's website", "/" + page);
         loadScript("login");
     }
-    
+    if (window.location.hostname == siteurl) {
+        window.onload = function() {
+            translateButton = document.createElement("div");
+            translateButton.setAttribute("style", "position: fixed; right: 0; top: 0;");
+            document.getElementsByClassName("title")[0].appendChild(translateButton);
+            translateButton.innerHTML = "<a href='javascript:translate()'><img src='data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMDAwMDAwIiBoZWlnaHQ9IjM2IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIzNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0wIDBoMjR2MjRIMHoiIGZpbGw9Im5vbmUiLz4KICAgIDxwYXRoIGQ9Ik0xMi44NyAxNS4wN2wtMi41NC0yLjUxLjAzLS4wM2MxLjc0LTEuOTQgMi45OC00LjE3IDMuNzEtNi41M0gxN1Y0aC03VjJIOHYySDF2MS45OWgxMS4xN0MxMS41IDcuOTIgMTAuNDQgOS43NSA5IDExLjM1IDguMDcgMTAuMzIgNy4zIDkuMTkgNi42OSA4aC0yYy43MyAxLjYzIDEuNzMgMy4xNyAyLjk4IDQuNTZsLTUuMDkgNS4wMkw0IDE5bDUtNSAzLjExIDMuMTEuNzYtMi4wNHpNMTguNSAxMGgtMkwxMiAyMmgybDEuMTItM2g0Ljc1TDIxIDIyaDJsLTQuNS0xMnptLTIuNjIgN2wxLjYyLTQuMzNMMTkuMTIgMTdoLTMuMjR6Ii8+Cjwvc3ZnPgo=' alt='Translate this page' /></a>";
+            delete translateButton;
+        }
+    }
     debug("Done! luk3yx-security is now exiting.");
 }
 }
