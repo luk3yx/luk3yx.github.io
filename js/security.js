@@ -7,7 +7,6 @@ function debug(str) {
     console.log("luk3yx-" + scriptElements[scriptElements.length - 1].getAttribute('src', -1).substring(4).split('.')[0] + " // " + str);
 }
 var siteurl = "luk3yx.github.io"
-var translateurl = "translate.google.com"
 var protocol = window.location.protocol;
 
 var redirecturl = "https://" + siteurl + window.location.pathname + window.location.search + window.location.hash
@@ -18,7 +17,7 @@ function redirect() {
     window.location.href = redirecturl;
 }
 debug("Security loaded on " + siteurl + ". Scanning...");
-if (siteurl !== window.location.hostname && translateurl !== window.location.hostname)  {
+if (siteurl !== window.location.hostname && "translate.google.com" !== window.location.hostname && "translate.googleusercontent.com" !== window.location.hostname)  {
 window.stop();
 debug("This site is presumed to be fake, as actual URL is " + window.location.hostname + '.');
 redirect();
