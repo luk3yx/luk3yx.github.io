@@ -26,11 +26,6 @@ if (protocol == "http:") {
     debug("Warning! You are not using a secure protocol. You will now be switched to https.")
     redirect();
 } else {
-if (window.self !== window.top) {
-    debug("Removing iframe...");
-    window.stop();
-    top.location.href = window.location.href;
-} else {
     debug("All clear");
     debug("Loading functions...");
     if (window.location.hostname == siteurl) {
@@ -124,6 +119,5 @@ if (window.self !== window.top) {
         loadScript("login");
     }
     debug("Done! luk3yx-security is now exiting.");
-}
 }
 }
