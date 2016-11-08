@@ -18,7 +18,7 @@ function redirect() {
     window.location.href = redirecturl;
 }
 debug("Security loaded on " + siteurl + ". Scanning...");
-if (siteurl !== window.location.hostname || translateurl !== window.location.hostname)  {
+if (siteurl !== window.location.hostname && translateurl !== window.location.hostname)  {
 window.stop();
 debug("This site is presumed to be fake, as actual URL is " + window.location.hostname + '.');
 redirect();
