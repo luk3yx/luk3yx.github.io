@@ -6,7 +6,7 @@ function debug(str) {
     scriptElements = document.getElementsByTagName('script');
     console.log("luk3yx-" + scriptElements[scriptElements.length - 1].getAttribute('src', -1).substring(4).split('.')[0] + " // " + str);
 }
-var siteurl = "luk3yx.github.io"
+var siteurl = "luk3yx.github.io";
 var protocol = window.location.protocol;
 
 var redirecturl = "https://" + siteurl + window.location.pathname + window.location.search + window.location.hash
