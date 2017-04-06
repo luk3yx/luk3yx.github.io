@@ -64,10 +64,15 @@ center, .centre, .title img {
     position: fixed;
     z-index: 11;
 }
-
+.onlyinff {
+    display: none;
+}
 @-moz-document url-prefix() {
     .hideinff {
         display: none;
+    }
+    .onlyinff {
+        display: inline !important;
     }
 }
 

@@ -40,6 +40,9 @@ All rights reserved.
         <a href="https://www.mozilla.org/firefox" class="hideinff" target="_blank">
             <img alt="Get Mozilla Firefox Now!" src="/images/firefox.png" />
         </a>
+        <a href="https://www.fairtrade.net/about-fairtrade/what-is-fairtrade.html" class="onlyinff" target="_blank">
+            <img alt="Is your food fair food?" src="/images/fairtrade.svg" />
+        </a>
     </center>
     
     <div class="content">
@@ -56,10 +59,11 @@ All rights reserved.
         </h1>
         <form action="/js/handler" method="get" target="_blank">
             <p>
+                <input type="hidden" name="type" value="card" />
                 Type:
-                <select name="type">
-                    <option value="xmascard">A Christmas card</option>
-                    <option value="birthdaycard">A birthday card</option>
+                <select name="card">
+                    <option value="Christmas">A Christmas card</option>
+                    <option value="birthday">A birthday card</option>
                 </select><br/>
                 To: <input type="text" name="to" size="15" /><br/>
                 From: <input type="text" name="from" size="15" /><br/>

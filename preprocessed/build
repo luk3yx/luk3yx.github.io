@@ -135,7 +135,10 @@ cd "$DIR/.."
 git add .
 echo 85
 echo "# Creating commit..."
-git commit -m "Re-generate website on $(date -u)"
+name=''
+name=$(zenity --entry --title "Git commit name" --text "What have you changed?")
+[ -z "$name" ] && name="Re-generate website on $(date -u)"
+git commit -m "$name"
 echo 90
 echo "# Pushing Git..."
 git push -f -u origin master

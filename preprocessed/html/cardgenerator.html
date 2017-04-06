@@ -11,10 +11,11 @@
 </h1>
 <form action="/js/handler" method="get" target="_blank">
     <p>
+        <input type="hidden" name="type" value="card" />
         Type:
-        <select name="type">
-            <option value="xmascard">A Christmas card</option>
-            <option value="birthdaycard">A birthday card</option>
+        <select name="card">
+            <option value="Christmas">A Christmas card</option>
+            <option value="birthday">A birthday card</option>
         </select><br/>
         To: <input type="text" name="to" size="15" /><br/>
         From: <input type="text" name="from" size="15" /><br/>
