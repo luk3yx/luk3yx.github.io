@@ -1,7 +1,8 @@
 // You think I would copyright this?
 // Of course not.
 url = getParam.url;
-if (url.substring(0, 3) == "jav") {
+// https://stackoverflow.com/a/3480785/1 for the XSS detection.
+if (str.indexOf("javascript:") >= 0) {
     window.location.href = "/error.html#xss";
 } else {
     window.location.href = url;
