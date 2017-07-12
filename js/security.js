@@ -118,6 +118,11 @@ if (protocol == "http:") {
         window.history.replaceState({}, "luk3yx's website", "/" + page);
         loadScript("login");
     }
+    // Disable Google® Analytics on the BTFN page.
+    var _btfn_options = {
+        theme: 'money',
+        disableGoogleAnalytics: true
+    }
     debug("Done! luk3yx-security is now exiting.");
 }
 }
