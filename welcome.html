@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!--
+Copyright 2017 by luk3yx.
+All rights reserved.
+-->
+
+<head>
+    <title>Welcome - luk3yx's website</title>
+	<meta http-equiv="content-type" 
+		content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="stylesheet" type="text/css" media="only screen and (min-width: 480px)" href="https://fonts.googleapis.com/css?family=Ubuntu:400,300" />
+    <link rel="icon" href="/images/favicon.png" type="image/png" />
+    <!-- Battle For The Net Widget -->
+    <script src="https://widget.battleforthenet.com/widget.js"></script>
+    <!-- HTML5Shiv -->
+    <!--[if lt IE 9]>
+    <script src="https://raw.githubusercontent.com/aFarkas/html5shiv/master/dist/html5shiv.min.js" type="text/javascript"></script>
+    <script src="https://raw.githubusercontent.com/aFarkas/html5shiv/master/dist/html5shiv-printshiv.min.js" type="text/javascript"></script>
+    <![endif]-->
+    <!-- HTML5Shiv END -->
+    <meta name="viewport" content="width=350" />
+    <script>
+    var frame;
+    var reloadonframe;
+    reloadonframe = false;
+    function calcHeight() {
+        if (frame == undefined) {
+            frame = document.getElementsByTagName("iframe")[0];
+        }
+        if (frame.getBoundingClientRect().top < 16) {
+            document.getElementById("welcome").setAttribute("data-scroll", "false");
+            document.getElementById("welcome").innerHTML = "";
+            try {
+                window.history.replaceState({}, "luk3yx's website", "/");
+            } catch(e) {
+                null
+            }
+            document.title = "luk3yx's website";
+            if (reloadonframe) {
+                window.location.href = frame.getAttribute("src");
+            }
+        }
+    }
+    function setTarget(frame) {
+        try {
+            frame.contentWindow.document.head.innerHTML += "<base target='_top' /" + ">";
+        } catch(e) {
+            reloadonframe = true;
+            console.log("luk3yx-welcome // " + e.toString());
+        }
+    }
+    window.onload = function() {
+        window.onresize = window.onscroll = calcHeight;
+        calcHeight();
+    }
+    </script>
+    <style>
+    * {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .imgwrapper {
+        color: white;
+        background-color: #205ABD;
+        height: 100vh;
+        padding-top: 25vh !important;
+        background-image: url("../images/Black_hole_by_Marek_Koteluk.jpg");
+        background-size: cover;
+        background-attachment: fixed;
+    }
+    .imgwrapper h1 {
+        color: white;
+        font-size: 12.5vh !important;
+        position: sticky;
+        top: 56px;
+        padding-bottom: 48px !important;
+    }
+    .imgwrapper h2 {
+        color: white;
+        top: 0 !important;
+        position: sticky;
+        font-size: 32px;
+        padding-bottom: 5px !important;
+    }
+    iframe {
+        position: fixed;
+        top: 0;
+        left: 0;
+        border: none;
+        width: 100vw;
+        height: 100vh;
+    }
+    #welcome[data-scroll="true"] ~ iframe {
+        border-top: 2px solid black !important;
+        position: sticky;
+        pointer-events: none;
+    }
+    html {
+        overflow-x: hidden;
+    }
+    #credit {
+        position: fixed;
+        bottom: 16px;
+        right: 16px;
+    }
+    .title {
+        border-bottom: 2px solid white !important;
+        background-color: #fff4 !important;
+    }
+    </style>
+</head>
+<body>
+<div id="welcome" data-scroll="true">
+    <div class="title">
+    </div>
+
+    <div class="imgwrapper centre">
+        <h1>
+            Welcome.
+        </h1>
+        <br/><br/><br/>
+        <h2>
+            This is luk3yx's website.
+        </h2>
+        <br/><br/><br/><br/><br/>
+        <div id="credit">
+            <h3 style="color: white;">
+                <i>
+                    Image: Black hole by Mare Koteluk, licensed under CC-BY-SA 3.0.
+                </i>
+            </h3>
+        </div>
+    </div>
+</div>
+        <iframe src="/index.html" onload="setTarget(this);" />
+</body>
+</html>
