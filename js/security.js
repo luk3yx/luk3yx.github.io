@@ -27,6 +27,10 @@ if (protocol == "http:") {
     redirect();
 } else {
     debug("All clear");
+    if (window.location.pathname == "" || window.location.pathname == "/") {
+        debug("The welcome screen is loading.")
+        window.location.href = "/welcome.html";
+    }
     debug("Loading functions...");
     if (window.location.hostname == siteurl) {
         window.onload = function() {
