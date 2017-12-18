@@ -343,6 +343,13 @@ input[type=checkbox] {
 .forceblur {
     cursor: not-allowed;
 }
+.code {
+    background-color: #eee;
+    border: 1px solid #aaa;
+    font-family: "Ubuntu Mono", monospace;
+    padding: 0.2em;
+    border-radius: 5px;
+}
 /*
 a:contains('string') {
     display: none;
