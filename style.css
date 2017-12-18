@@ -349,29 +349,5 @@ input[type=checkbox] {
     font-family: "Ubuntu Mono", monospace;
     padding: 0.2em;
     border-radius: 5px;
+    display: inline-block;
 }
-/*
-a:contains('string') {
-    display: none;
-}
-
-.title center:active {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    background: #EEEEEE;
-    height: 100%;
-    border: none;
-}
-
-#n0:target .title, #n0 #w3c, #n0 #hideinff {
-    display: none;
-}
-#n0:target body, #n0:target {
-    margin-top: 0 !important;
-    top: 0;
-    background-color: #EEEEEE;
-}*/
