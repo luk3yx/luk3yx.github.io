@@ -27,8 +27,8 @@ url: "https://luk3yx.github.io" # the base hostname & protocol for your site, e.
 # Build settings
 markdown: kramdown
 #theme: minima
-#plugins:
-#  - jekyll-feed
+plugins:
+  - jekyll-redirect-from
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
