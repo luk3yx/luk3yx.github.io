@@ -1,0 +1,28 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!--
+Copyright 2017 by luk3yx.
+All rights reserved.
+-->
+
+<head>
+    {% include head.html %}
+    <title>{{ page.title }} - {{ site.title }}</title>
+</head>
+
+<body>
+
+    {% include title.html %}
+    
+    <div class="content">
+        {{ content }}
+    </div>
+    
+    {% include smallprint.html %}
+</body>
+</html>

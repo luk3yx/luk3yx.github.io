@@ -1,145 +1,63 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+---
+title: Card Generator
+layout: default
+---
 
-<!--
-Copyright 2016 by luk3yx.
-All rights reserved.
--->
-
-<head>
-    <script type="text/javascript" src="/js/security.js"></script>
-<title id="title"> Birthday/Christmas Card Generator - luk3yx's website</title>
-	<meta http-equiv="content-type" 
-		content="text/html;charset=utf-8" />
-    <link rel="stylesheet" type="text/css" href="/style.css" />
-    <link rel="stylesheet" type="text/css" media="only screen and (min-width: 480px)" href="https://fonts.googleapis.com/css?family=Ubuntu:400,300" />
-    <link rel="icon" href="/images/favicon.png" type="image/png" />
-    <!-- Battle For The Net Widget -->
-    <script src="https://widget.battleforthenet.com/widget.js"></script>
-    <!-- HTML5Shiv -->
-    <!--[if lt IE 9]>
-    <script src="https://raw.githubusercontent.com/aFarkas/html5shiv/master/dist/html5shiv.min.js" type="text/javascript"></script>
-    <script src="https://raw.githubusercontent.com/aFarkas/html5shiv/master/dist/html5shiv-printshiv.min.js" type="text/javascript"></script>
-    <![endif]-->
-    <!-- HTML5Shiv END -->
-    <meta name="viewport" content="width=350" />
-</head>
-
-<body>
-
-    <div class="title">
-        <center>
-            <h1>
-                <a href="/index.html">
-                    <img src="/images/logo.png" alt="Welcome to luk3yx's Website!" />
-                </a>
-            </h1>
-        </center>
-    </div>
-    
-    <center>
-        <a href="https://www.mozilla.org/firefox" class="hideinff" target="_blank">
-            Firefox 57 is here! Download it now for a <b>massive</b> speed improvement!
-            <br/>
-            <img alt="Get Mozilla Firefox Now!" src="/images/firefox.png" />
-        </a>
-    </center>
-    
-    <div class="content">
-        <h1>
-            Birthday/Christmas Card Generator
-            <small>
-                <small>
-                Thanks to
-                    <a href="/index.html">
-                        luk3yx.
-                    </a>
-                </small>
-            </small>
-        </h1>
-        <form action="/js/handler" method="get" target="_blank">
-            <p>
-                <input type="hidden" name="type" value="card" />
-                Type:
-                <select name="card">
-                    <option value="Christmas">A Christmas card</option>
-                    <option value="birthday">A birthday card</option>
-                </select><br/>
-                To: <input type="text" name="to" size="15" /><br/>
-                From: <input type="text" name="from" size="15" /><br/>
-                Text Colour:
-                <select name="colour">
-                    <option value="black">Black</option>
-                    <option value="brown">Brown</option>
-                    <option value="red">Red</option>
-                    <option value="orange">Orange</option>
-                    <option value="yellow">Yellow</option>
-                    <option value="green">Green</option>
-                    <option value="blue">Blue</option>
-                    <option value="pink">Pink</option>
-                    <option value="white">White</option>
-                </select><br/>
-                Background Image:
-                <select id="xmasimg" name="img">
-                    <option value="">None, or a custom URL stated below.</option>
-                    <option value="4" disabled="disabled">--- Christmas Card Images ---</option>
-                    <option value="xmas1">Dark Blue with snowflakes in an inverted-wave pattern.</option>
-                    <option value="xmas2">Light blue (dark around edges) with scattered snowflakes.</option>
-                    <option value="xmas3">Light red (dark around edges) with scattered snowflakes.</option>
-                    <option value="xmas4">Red background with christmas tree (made of white ovals) to left.</option>
-                    <option value="xmas5">Dark red with snowflakes in a wave pattern.</option>
-                    <option value="xmas6">A night scene, blue in middle, black on edges, snow on bottom, and tree to right.</option>
-                    <option value="5" disabled="disabled">--- Birthday Card Images ---</option>
-                    <option value="birthday1">Baloons to left, happy birthday up top, and blue -&gt; pink gradient background.</option>
-                    <option value="birthday2">Red background with presents &amp; snowflakes to right.</option>
-                    <option value="birthday3">Randomly coloured/colored circles with happy birthday text up top-left.</option>
-                </select> 
-                <br/>
-                ...Alternatively a URL: <input type="text" id="xmasimgurl" name="imgurl" size="15" />
-                <br/>
-                Message: (Supports HTML code)
-                <br/>
-                <textarea id="xmasmsg" name="msg" cols="30" rows="5"></textarea>
-                <br/>
-                <input type="submit" name="submit" value="Generate!" />
-            </p>
-        </form>
-    </div>
-    
-    <center>
-        <a href="https://www.fairtrade.net/about-fairtrade/what-is-fairtrade.html" class="hideinff" target="_blank">
-            <img alt="Is your food fair food?" src="/images/fairtrade.svg" />
-        </a>
-    </center>
-    
-    <div class="smallprint">
-        <center>
-            <h5>
-                
-                &copy; Copyright 2017 by luk3yx. All rights reserved.
-                <br/>
-                <a href="/privacy.html#terms">
-                    Terms and Conditions</a>
-                |
-                <a href="/privacy.html#privacy">
-                    Privacy Policy</a>
-                |
-                <a href="https://github.com/luk3yx/luk3yx.github.io/issues">
-                    Report an Issue</a>
-                |
-                <a href="/privacy.html#contact">
-                    Contact Me
-                </a>
-            </h5>
-            <p id="w3c">
-                <a href="https://validator.w3.org/check?uri=referer" target="_blank">
-                    <img src="https://www.w3.org/Icons/valid-xhtml10"
-                        alt="Valid XHTML 1.0 Transitional" height="31"
-                        width="88" />
-                </a>
-            </p>
-        </center>
-    </div>
-</body>
-</html>
+<h1>
+    Birthday/Christmas Card Generator
+    <small>
+        <small>
+        Thanks to
+            <a href="{{ site.baseurl }}/index.html">
+                luk3yx.
+            </a>
+        </small>
+    </small>
+</h1>
+<form action="{{ site.baseurl }}/js/handler" method="get" target="_blank">
+    <p>
+        <input type="hidden" name="type" value="card" />
+        Type:
+        <select name="card">
+            <option value="Christmas">A Christmas card</option>
+            <option value="birthday">A birthday card</option>
+        </select><br/>
+        To: <input type="text" name="to" size="15" /><br/>
+        From: <input type="text" name="from" size="15" /><br/>
+        Text Colour:
+        <select name="colour">
+            <option value="black">Black</option>
+            <option value="brown">Brown</option>
+            <option value="red">Red</option>
+            <option value="orange">Orange</option>
+            <option value="yellow">Yellow</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="pink">Pink</option>
+            <option value="white">White</option>
+        </select><br/>
+        Background Image:
+        <select id="xmasimg" name="img">
+            <option value="">None, or a custom URL stated below.</option>
+            <option value="4" disabled="disabled">--- Christmas Card Images ---</option>
+            <option value="xmas1">Dark Blue with snowflakes in an inverted-wave pattern.</option>
+            <option value="xmas2">Light blue (dark around edges) with scattered snowflakes.</option>
+            <option value="xmas3">Light red (dark around edges) with scattered snowflakes.</option>
+            <option value="xmas4">Red background with christmas tree (made of white ovals) to left.</option>
+            <option value="xmas5">Dark red with snowflakes in a wave pattern.</option>
+            <option value="xmas6">A night scene, blue in middle, black on edges, snow on bottom, and tree to right.</option>
+            <option value="5" disabled="disabled">--- Birthday Card Images ---</option>
+            <option value="birthday1">Baloons to left, happy birthday up top, and blue -&gt; pink gradient background.</option>
+            <option value="birthday2">Red background with presents &amp; snowflakes to right.</option>
+            <option value="birthday3">Randomly coloured/colored circles with happy birthday text up top-left.</option>
+        </select> 
+        <br/>
+        ...Alternatively a URL: <input type="text" id="xmasimgurl" name="imgurl" size="15" />
+        <br/>
+        Message: (Supports HTML code)
+        <br/>
+        <textarea id="xmasmsg" name="msg" cols="30" rows="5"></textarea>
+        <br/>
+        <input type="submit" name="submit" value="Generate!" />
+    </p>
+</form>

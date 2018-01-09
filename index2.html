@@ -1,8 +1,5 @@
 ---
-title: Main Page
-layout: welcome
-redirect_from:
-  - /welcome.html
+layout: default
 ---
 
 <h2>
@@ -44,14 +41,22 @@ redirect_from:
     <a href="youtube-cinema.html">
         YouTube&reg; Cinema Mode Button (Requires Javascript)
     </a>
+    <br/>
+    <a href="webpagescreenshot.html">
+        Webpage Screenshots
+    </a>
 </p>
 <hr/>
 <h3>
     Here are some interesting links that go to other websites.
 </h3>
 <p>
-    <a href="https://mozilla.org/firefox">
-        Firefox download
+    <a href="https://marketplace.firefox.com/">
+        Firefox Marketplace<!--
+    --></a>
+    |
+    <a href="https://marketplace.firefox.com/purchases">
+        Your apps
     </a>
     <br/>
     <a href="https://www.google.com/maps/?force=lite">
@@ -84,11 +89,13 @@ redirect_from:
     </a>
 </p>
 <hr/>
-<!-- TODO: Copy these over
 <h3>
     Other, not so interesting pages on this website
 </h3>
 <p>
+    <a href="/welcome.html" class="new">
+        Manually go to the new welcome screen (Requires JavaScript and CSS)
+    </a>
     <br/>
     <a href="/images">
         List of images
@@ -101,5 +108,8 @@ redirect_from:
     <a href="/error.html#gameover">
         Game over screen (Requires CSS)
     </a>
+    <br/>
+    <a href="#" target="_top" onclick="showLoadScreen(); setTimeout(function() {location.reload(); }, 5000);">
+        Show Loading Screen for 5 seconds (Requires CSS &amp; JavaScript)
+    </a>
 </p>
--->

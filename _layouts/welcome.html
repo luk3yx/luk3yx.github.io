@@ -1,0 +1,145 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!--
+Copyright 2017 by luk3yx.
+All rights reserved.
+-->
+
+<head>
+    {% include head.html %}
+    <title>Welcome - {{ site.title }}</title>
+    <script>
+    var frame;
+    frame = null;
+    function calcHeight() {
+        if (frame == null) {
+            frame = document.getElementById("welcomewrapper");
+        }
+        if (frame.getBoundingClientRect().top < 72) {
+            document.body.setAttribute("data-pos", "1");
+        } else {
+            document.body.setAttribute("data-pos", "0");
+        }
+    }
+    window.onload = function() {
+        window.onresize = window.onscroll = calcHeight;
+        calcHeight();
+    }
+    </script>
+    <style>
+    #welcome * {
+        margin: 0;
+        padding: 0;
+    }
+    .imgwrapper {
+        color: white;
+        background-color: #205ABD;
+        height: 100vh;
+        padding-top: 25vh !important;
+        background-image: url("../images/Black_hole_by_Marek_Koteluk.jpg");
+        background-size: cover;
+        background-attachment: fixed;
+    }
+    .imgwrapper h1 {
+        color: white;
+        font-size: 12.5vh !important;
+        position: sticky;
+        top: 56px;
+        padding-bottom: 48px !important;
+    }
+    .imgwrapper h2 {
+        color: white;
+        top: 0 !important;
+        position: sticky;
+        font-size: 32px;
+        padding-bottom: 5px !important;
+        font-family: Ubuntu;
+    }
+    iframe {
+        position: fixed;
+        top: 0;
+        left: 0;
+        border: none;
+        width: 100vw;
+        height: 100vh;
+    }
+    html {
+        overflow-x: hidden;
+    }
+    #credit {
+        position: fixed;
+        bottom: 16px;
+        right: 16px;
+        z-index: 1;
+    }
+    .title {
+        transition: ease-in-out 250ms 25ms;
+    }
+    #welcome .title {
+        border-bottom: 2px solid white !important;
+        background-color: #fff4 !important;
+    }
+    #welcomewrapper .title, body[data-pos="1"] #welcome .title {
+        opacity: 0;
+        pointer-events: none;
+    }
+    .title h1 {
+        margin-top: 1px;
+    }
+    body[data-pos="1"] #welcomewrapper .title {
+        opacity: 1;
+        pointer-events: auto;
+    }
+    .content {
+        margin-top: 0;
+    }
+    #welcomewrapper {
+        z-index: 2;
+        position: relative;
+        width: 100%;
+        background: #EFEFEF;
+    }
+    body {
+        margin-top: 0 !important;
+    }
+    </style>
+</head>
+<body>
+<div id="welcome">
+    <div class="title"></div>
+
+    <div class="imgwrapper centre">
+        <h1>
+            Welcome.
+        </h1>
+        <br/><br/><br/>
+        <h2>
+            This is {{ site.title }}.
+        </h2>
+        <br/><br/><br/><br/><br/>
+        <div id="credit">
+            <h3 style="color: white;">
+                <i>
+                    Image: Black hole by Mare Koteluk, licensed under CC-BY-SA 3.0.
+                </i>
+            </h3>
+        </div>
+    </div>
+</div>
+<div id="welcomewrapper">
+    {% include title.html %}
+    
+    <div class="content">
+        {{ content }}
+    </div>
+    
+    {% include smallprint.html %}
+</div>
+</body>
+</html>
