@@ -1,0 +1,41 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    {% import head.html %}
+    <title>Game Over</title>
+    <style>
+    body {
+        background-color: black;
+        width: 100%;
+        height: 100%;
+        z-index: 99;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    * {
+       user-select: none;
+       -moz-user-select: -moz-none;
+       -khtml-user-select: none;
+       -webkit-user-select: none;
+       -ms-user-select: none;
+    }
+
+    h1 {
+        font-size: 11vw;
+        color: red;
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <h1>GAME OVER</h1>
+</body>
+</html>
