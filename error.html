@@ -1,0 +1,22 @@
+---
+layout: compress
+---
+<!DOCTYPE html>
+<title>Redirecting...</title>
+<h1>Redirecting...</h1>
+<p>If you are not redirected, please make sure JavaScript is enabled.</p>
+<script>
+    switch(window.location.hash) {
+        case '#404':
+        case '#e404':
+            a = '404.html';
+        case '#410':
+        case '#e410':
+            a = '410.html';
+        case '#gameover':
+            a = 'gameover.html';
+        default:
+            a = '418.html';
+    }
+    window.location.href = a;
+</script>
