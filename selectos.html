@@ -1,0 +1,667 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" 
+		content="text/html;charset=utf-8" />
+    <!-- HTML5Shiv -->
+    <!--[if lt IE 9]>
+    <script src="https://raw.githubusercontent.com/aFarkas/html5shiv/master/dist/html5shiv.min.js" type="text/javascript"></script>
+    <script src="https://raw.githubusercontent.com/aFarkas/html5shiv/master/dist/html5shiv-printshiv.min.js" type="text/javascript"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=350" />
+    <link rel="stylesheet" type="text/css" href="https://luk3yx.github.io/style.css" />
+    <link rel="icon" href="https://luk3yx.github.io/images/favicon.png" type="image/png" />
+    <script>
+    vars = {}
+    /*
+      The 'vars' variable contents:
+        bits:   64(-bit), 32(-bit), etc
+        ram:    The amount of RAM the computer has, in MiB.
+        cpu:    The CPU's processing power, in MHz
+        cores:  The amount of core(s) the CPU has.
+        ecpu:   The effective processing power of the computer.
+        theme:  The desired theme.
+        
+      The 'oslist' variable is an array with objects in it. An object normally
+        contains:
+        
+        title:      The title of the OS
+            Example: "Lubuntu"
+        
+        theme:      The default theme style used
+            Example: "classic"
+        
+        url:        The official website for the OS
+            Example: "https://lubuntu.net"
+        
+        logo:       The logo to use in the search results page. Setting this will hide the text.
+            Example: "https://upload.wikimedia.org/wikipedia/commons/3/3a/Lubuntu_logo_only.svg"
+        
+        ram:        The minimum RAM requirement, in MiB.
+            Example: 700
+        
+        cpu:        The minimum CPU requirement, in MHz.
+            Example: 700
+        
+        bits:       The minimum architecture required.
+            Example: 32
+        
+        conflicts:  Hide the OS if any of these ones are displayed
+            Example: ["Ubuntu MATE"]
+        
+    */
+    var oslist = [
+      {
+        title: "Ubuntu MATE",
+        theme: "traditional",
+        url:   "https://ubuntu-mate.org",
+        logo:  "https://ubuntu-mate.org/assets/img/logos/ubuntu-mate.svg",
+        ram:   1024,
+        cpu:   768,
+        bits:  32,
+      },
+      
+      {
+        title: "Ubuntu",
+        theme: "modern",
+        url:   "https://ubuntu.com",
+        logo:  "https://assets.ubuntu.com/v1/29985a98-ubuntu-logo32.png",
+        ram:   2048,
+        cpu:   4096,
+        bits:  64,
+      },
+      
+      {
+        title: "Lubuntu",
+        theme: "traditional",
+        url:   "https://lubuntu.net",
+        logo:  "https://upload.wikimedia.org/wikipedia/commons/3/3a/Lubuntu_logo_only.svg",
+        ram:   700,
+        cpu:   700,
+        bits:  32,
+        
+        conflicts: ["Ubuntu MATE"]
+      },
+      
+      {
+        title: "Lubuntu (Alternate installer)",
+        theme: "traditional",
+        url:   "https://lubuntu.net",
+        logo:  "https://upload.wikimedia.org/wikipedia/commons/3/3a/Lubuntu_logo_only.svg",
+        ram:   128,
+        cpu:   512,
+        bits:  32,
+        
+        conflicts: ["Ubuntu MATE", "Lubuntu"]
+      },
+      
+      {
+        title: "SliTaz",
+        theme: "traditional",
+        url:   "http://slitaz.org",
+        logo:  "http://slitaz.org/images/logo.png",
+        ram:   128,
+        cpu:   512,
+        bits:  32,
+        
+        conflicts: ["Ubuntu MATE"]
+      },
+      
+      {
+        title: "SliTaz Minimal",
+        theme: "traditonal",
+        url:   "http://slitaz.org",
+        logo:  "http://slitaz.org/images/logo.png",
+        ram:   64,
+        cpu:   512,
+        bits:  32,
+        
+        conflicts: ["SliTaz"]
+      },
+      
+      {
+        title: "BasicLinux",
+        theme: "classic",
+        url:   "http://distro.ibiblio.org/baslinux/",
+        ram:   12,
+        cpu:   66,
+        bits:  32,
+        
+        conflicts: ["SliTaz"]
+      },
+      
+      {
+        title: "BasicLinux (Console-only)",
+        theme: "",
+        url:   "http://distro.ibiblio.org/baslinux/",
+        ram:   3,
+        cpu:   33,
+        bits:  32,
+        
+        conflicts: ["SliTaz", "BasicLinux"]
+      },
+      
+      {
+        title: "Kubuntu",
+        theme: "modern",
+        url:   "https://kubuntu.org",
+        logo:  "https://upload.wikimedia.org/wikipedia/commons/1/1f/Kubuntu_logo.svg",
+        ram:   2048,
+        cpu:   2048,
+        bits:  32,
+      },
+      
+      {
+        title: "Linux Mint",
+        theme: "modern",
+        url:   "https://linuxmint.com",
+        logo:  "https://upload.wikimedia.org/wikipedia/commons/3/3f/Linux_Mint_logo_without_wordmark.svg",
+        ram:   1500,
+        cpu:   2048,
+        bits:  32,
+      },
+    ]
+    
+    // Generate HTML for the OS list
+    function generateHTML(obj) {
+        gl = "<h1>Search results</h1><h2>There ";
+        if (obj.length == 1) {
+            gl += 'was <b>1</b> result'
+        } else {
+            gl += 'were <b>' + obj.length.toString() + '</b> results'
+        }
+        gl += '.</h2><ul>';
+        if (obj.length == 0) {
+            gl += '<li class="searchResult">&#x2639; Aww.</li>'
+        }
+        for (gc = 0; gc < obj.length; gc++) {
+            go = obj[gc]
+            if (go.logo == undefined) {
+                go.logo = "https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg"
+            }
+            gl += '<li class="searchResult"><a href="' + go.url +
+                '"><img src="' + go.logo + '"/' + '> ' + go.title + '</a></li>';
+        }
+        gl += '</ul><br/' + '>' +
+          '<button class="big yellow" onclick="hideSearch();">Go back</button>';
+        return gl;
+    }
+    
+    function setVar(opts) {
+        if (typeof(opts) == "object") {
+            id = opts.id
+            if (id == "") {
+                id = opts.name
+            }
+        } else if (typeof(opts) == "string") {
+            id = opts
+        } else {
+            return false
+        }
+        n = document.getElementsByName(id)
+        if (n.length > 1) {
+            document.getElementById(id).removeAttribute("class")
+            for (c = 0; c < n.length; c++) {
+                if (n[c].checked) {
+                    vars[id] = n[c].value
+                    break
+                }
+            }
+        } else if (n.length > 0) {
+            vars[id] = n[0].value
+        } else {
+            return
+        }
+        if (id == "ram" || id == "cpu") {
+            n = Number(vars[id])
+            // Inverse the number, get the logmarithic scale, then inverse it.
+            n = 1 - n
+            n = Math.log(1 + n) / Math.log(2)
+            n = 1 - n
+            // Get the amount of megabytes
+            if (id == "cpu") {
+                scale = 4096
+            } else {
+                scale = 8192
+            }
+            scale = scale - 5
+            n = Math.round(n * scale) + 5
+            n = Math.round(n / 10) * 10
+            // Store it
+            vars[id] = n
+            if (id == "cpu") {
+                f = "Hz"
+                vars.ecpu = (Number(vars.cpu) * Number(vars.cores))
+            } else {
+                f = "iB"
+            }
+            // Convert it to gigabytes
+            if (n > 1024) {
+                f = "G" + f
+                n = Math.round(n / 102.4) / 10
+                if (n == Math.floor(scale/1000)) {
+                    f += " or more"
+                }
+            } else {
+                f = "M" + f
+            }
+            // Convert it to a string to display
+            n = n.toString()
+            if (n.indexOf('.') == -1) {
+                n += '.0';
+            }
+            // Display the converted number
+            n = '&#x2248; ' + n.toString() + ' ' + f
+            document.getElementById(id).innerHTML = n
+        } else if (id == "cores") {
+            e = Number(n[0].getAttribute("max"))
+            n = '&#x2248; ' + vars[id] + ' ' + id
+            if (vars[id] == "1" && id[id.length - 1] == 's') {
+                n = n.substr(0, n.length - 1)
+            }
+            if (Number(vars[id]) >= e) {
+                n = n + ' or more'
+            }
+            document.getElementById(id).innerHTML = n;
+            //if (id == "cores") {
+                return setVar("cpu")
+            //}
+        }
+        return true
+    }
+    function hideLoadScreen() {
+        document.body.scrollTop = document.documentElement.scrollTop = 0
+        document.getElementById("loadscreen").style.opacity = "0";
+        window.setTimeout(function() {
+            document.body.style.overflow = "auto";
+            document.getElementById("loadscreen").style.display = "none";
+            document.getElementById("loadscreen").innerHTML = "<h1>Resetting...</h1>";
+        }, 300)
+    }
+    function calculateVars() {
+        vars = {}
+        // Multi-choice questions
+        bits = navigator.platform.split(' ')
+        bits = bits[bits.length - 1]
+        switch(bits) {
+            case 'x86_64':
+            case 'amd64':
+            case 'arm64':
+            vars.bits = "64"
+            break
+            case 'i386':
+            case 'i486':
+            case 'i586':
+            case 'i686':
+            case 'armhf':
+            case 'armel':
+            vars.bits = "32"
+            break
+            case 'i286':
+            vars.bits = "16"
+            break
+        }
+        vars.theme = ""
+        vars.conflicts = ""
+        
+        // Add in multi-choice questions
+        keys = Object.keys(vars)
+        for (y = 0; y < keys.length; y++) {
+            n = document.getElementsByName(keys[y])
+            for (i = 0; i < n.length; i++) {
+                if (n[i].value == vars[keys[y]]) {
+                    n[i].click()
+                    break
+                }
+                //n[i].setAttribute("disabled", "disabled")
+            }
+            if (keys[y] == "bits" || keys[y] == "conflicts") {
+                n[0].parentElement.parentElement.setAttribute("class", "known")
+            }
+        }
+        showLess()
+        
+        // Range sliders
+        z = document.getElementsByClassName("slider")
+        for (c = 0; c < z.length; c++) {
+            if (z[c].name == "ram" || z[c].name == "cpu") {
+                z[c].value = '0.58'
+            } else {
+                z[c].value = z[c].getAttribute("value")
+            }
+            setVar(z[c])
+        }
+        
+        
+    }
+    function reset() {
+        n = document.getElementById("loadscreen")
+        n.style.display = "block";
+        document.body.style.overflow = "hidden";
+        window.setTimeout(function() {
+            document.getElementById("loadscreen").style.opacity = "1";
+            window.setTimeout(function() {
+                document.getElementById("mainpage").style.display = "block";
+                document.getElementById("results").style.display = "none";
+                calculateVars()
+                window.setTimeout(hideLoadScreen, 150)
+            }, 350)
+        }, 100)
+    }
+    function showMore(elem) {
+        if (elem === undefined) {
+            elem = document.getElementById("showhide");
+        }
+        elem.setAttribute("onclick", "showLess(this);")
+        elem.setAttribute("class", "big green")
+        elem.innerHTML = "Show less questions";
+        document.getElementById("style").innerHTML = "";
+    }
+    function showLess(elem) {
+        if (elem === undefined) {
+            elem = document.getElementById("showhide");
+        }
+        elem.setAttribute("onclick", "showMore(this);")
+        elem.setAttribute("class", "big yellow")
+        elem.innerHTML = "Show more questions";
+        document.getElementById("style").innerHTML = ".known { display: none; }";
+    }
+    function searchList(param) {
+        e = document.getElementById("loadscreen")
+        if (Math.round(Number(vars.ram) / 102.4) / 10 == 3.1 && vars.cpu == "410" && vars.cores == "5") {
+            // Unlock pies mode
+            e.innerHTML = "<h1>I don't want pies!</h1>";
+            window.setTimeout(function() {
+                document.getElementById = function() {
+                    return document.createElement("div");
+                }
+                document.getElementsByName = document.getElementsByClassName = document.getElementsByTagName = function() {
+                    return [document.getElementById()];
+                }
+                window.location.href = "https://luk3yx.github.io/gameover.html";
+            }, 500)
+        } else {
+            e.innerHTML = "<h1>Searching...</h1>";
+        }
+        
+        // Now the actual searching code
+        if (param == "all") {
+            foundOSes = oslist;
+            foundOSes.sort(function(a, b) {
+                if (a.title < b.title) {
+                    return -1
+                } else if (a.title > b.title) {
+                    return 1
+                } else {
+                    return 0
+                }
+            });
+        } else {
+            foundOSes = [];
+            osNames = [];
+            
+            // Search for OSes
+            for (c = 0; c < oslist.length; c++) {
+                n = oslist[c];
+                if (n.ram <= vars.ram && n.cpu <= vars.ecpu &&
+                  n.bits <= vars.bits) {
+                    foundOSes.push(n);
+                    osNames.push(n.title);
+                }
+            }
+            
+            // Remove conflicts
+            conflicting = [];
+            for (c = 0; c < foundOSes.length; c++) {
+                conflicts = foundOSes[c].conflicts
+                if (conflicts != undefined && conflicts.length > 0) {
+                    for (d = 0; d < conflicts.length; d++) {
+                        if (osNames.indexOf(conflicts[d]) > -1) {
+                            conflicting.push(osNames[c])
+                            break
+                        }
+                    }
+                }
+            }
+            if (vars.conflicts != "yes") {
+                for (c = 0; c < conflicting.length; c++) {
+                    d = osNames.indexOf(conflicting[c]);
+                    if (d > -1) {
+                        foundOSes.splice(d, 1);
+                        osNames.splice(d, 1);
+                    }
+                }
+            }
+            
+            // Order by theme
+            foundOSes.sort(function(a, b) {
+                aa = conflicting.indexOf(a.title) > -1
+                bb = conflicting.indexOf(b.title) > -1
+                at = (a.theme != '' && a.theme == vars.theme)
+                bt = (b.theme != '' && b.theme == vars.theme)
+                if (aa && ! bb) {
+                    return 1
+                } else if (bb && ! aa) {
+                    return -1
+                } else if (at && ! bt) {
+                    return -1
+                } else if (bt && ! at) {
+                    return 1
+                } else if (a.title < b.title) {
+                    return -1
+                } else if (a.title > b.title) {
+                    return 1
+                } else {
+                    return 0
+                }
+            })
+        }
+        
+        document.getElementById("results").innerHTML = generateHTML(foundOSes);
+        
+        // Animations
+        e.style.display = "block";
+        document.body.style.overflow = "hidden";
+        window.setTimeout(function() {
+            document.getElementById("loadscreen").style.opacity = "1";
+            window.setTimeout(function() {
+                document.getElementById("mainpage").style.display = "none";
+                document.getElementById("results").style.display = "block";
+                window.setTimeout(hideLoadScreen, 150)
+            }, 350)
+        }, 100)
+    }
+    function hideSearch() {
+        n = document.getElementById("loadscreen")
+        n.innerHTML = "<h1>Returning...</h1>";
+        n.style.display = "block";
+        document.body.style.overflow = "hidden";
+        window.setTimeout(function() {
+            document.getElementById("loadscreen").style.opacity = "1";
+            window.setTimeout(function() {
+                document.getElementById("mainpage").style.display = "";
+                document.getElementById("results").style.display = "none";
+                document.getElementById("results").innerHTML = "";
+                window.setTimeout(hideLoadScreen, 150)
+            }, 350)
+        }, 100)
+    }
+    window.onload = function() {
+        n = document.getElementById("loadscreen");
+        n.innerHTML = `
+            <h1 style="font-size: 150px;">
+                Welcome.
+            </h1>
+        `;
+        calculateVars()
+        window.setTimeout(hideLoadScreen, 750)
+    }
+    </script>
+    <style>
+        #loadscreen, div {
+            -webkit-transition: ease-in-out 250ms 25ms;
+            -moz-transition: ease-in-out 250ms 25ms;
+            transition: ease-in-out 250ms 25ms;
+        }
+        .known {
+            opacity: 0.5;
+            user-select: none;
+        }
+        .known:not(.advinfo)::after {
+            display: block;
+            padding: 5px;
+            font-style: italic;
+            content: "The answer to this question was automatically determined. You may change it, however there is usually no need.";
+        }
+        .known.advinfo {
+            padding: 5px;
+            font-style: italic;
+        }
+        .big {
+            font-size: 24px !important;
+        }
+        .searchResult {
+            font-size: 24px;
+            list-style: none;
+            padding-bottom: 5px;
+            transition: ease-in-out 250ms 25ms;
+            max-width: 75vw;
+        }
+        .searchResult a {
+            text-decoration: none;
+            background: none !important;
+        }
+        .searchResult img {
+            height: 32px;
+            width: 32px;
+            vertical-align: middle;
+            margin-top: -2px;
+            background: none !important;
+        }
+        button.red:hover {
+            background-color: red !important;
+            color: white !important;
+        }
+        button.green:hover {
+            background-color: green !important;
+            color: white !important;
+        }
+        button.yellow:hover {
+            background-color: yellow !important;
+        }
+        input[type="range"]::-moz-range-track {
+            background: linear-gradient(to right, red, yellow, green, green, blue, blue);
+        }
+        input[type="range"][name="cpu"]::-moz-range-track {
+            background: linear-gradient(to right, red, red, yellow, green, green, blue, blue);
+        }
+        input[type="range"]::-moz-range-progress, .searchResult:hover {
+            background: #B0BEC5;
+        }
+        body {
+            overflow: hidden;
+        }
+        #results {
+            display: none;
+        }
+        #results h2:first-of-type {
+            font-weight: 400;
+        }
+        .title {
+            z-index: 10;
+        }
+    </style>
+    <style id="style"></style>
+    <title>Select an OS</title>
+</head>
+<body>
+    <div class="title">
+        <h1>
+            Select an OS
+        </h1>
+    </div>
+    <div id="loadscreen">
+        <h1>
+            Loading...
+        </h1>
+    </div>
+    <div class="content" id="mainpage">
+        <h1>Want to select the perfect OS for your computer? Just answer these questions.</h1>
+        
+        If you do not know and cannot find the answer to a question, leave it at the default.
+        <br/>
+        <br/>
+        <button class="big" style="width: 275px;" id="showhide"></button>
+        <button onclick="reset()" class="big red">Reset</button>
+        
+        <h2>Technical questions</h2>
+        
+        <div id="bits">
+            <h3>Is your computer 64-bit, 32-bit, or 16-bit?</h3>
+            <label><input type="radio" name="bits" value="64" onchange="setVar(this)" />64-bit</label>
+            <label><input type="radio" name="bits" value="32" onchange="setVar(this)" />32-bit</label>
+            <label><input type="radio" name="bits" value="16" onchange="setVar(this)" />16-bit</label>
+        </div>
+        
+        <h3>How much RAM does your computer have?</h3>
+        <input type="range" name="ram" value="0" step="0.001" min="0" max="1"
+            style="width: 512px;" onchange="setVar(this)" class="slider"
+                oninput="setVar(this)" />
+        <span id="ram"></span>
+        
+        <h3>How much CPU?</h3>
+        <input type="range" name="cpu" value="0" step="0.001" min="0" max="1"
+            style="width: 512px;" onchange="setVar(this)" class="slider"
+                oninput="setVar(this)" />
+        <span id="cpu"></span>
+        <br/>
+        <span class="known advinfo">
+            If you have multiple CPUs with different frequencies, this should be the average frequency.
+        </span>
+        
+        <h3>How many CPU cores does the computer have?</h3>
+        <input type="range" name="cores" value="4" min="1" max="8"
+            style="width: 512px;" onchange="setVar(this)" class="slider"
+                oninput="setVar(this)" />
+        <span id="cores"></span>
+        
+        <h2>Aesthetic questions</h2>
+        
+        <i>
+            Some questions below may only affect the order of the OS list, not
+            the OSes shown or hidden.
+        </i>
+        
+        <div id="theme">
+            <h3>What theme do you want your computer to have?</h3>
+            <label><input type="radio" name="theme" value="" onchange="setVar(this)" />Don't care</label>
+            <label><input type="radio" name="theme" value="modern" onchange="setVar(this)" />Modern</label>
+            <label><input type="radio" name="theme" value="traditional" onchange="setVar(this)" />Traditional</label>
+            <label><input type="radio" name="theme" value="classic" onchange="setVar(this)" />Classic</label>
+            <br/>
+            <div class="known advinfo">
+                Most OSes can be themed, but this question only applies to
+                out-of-the-box themes.
+            </div>
+        </div>
+        
+        <div id="conflicts">
+            <h3>Do you want to show more OSes in the list?</h3>
+            <label><input type="radio" name="conflicts" value="yes" onchange="setVar(this)" />Yes</label>
+            <label><input type="radio" name="conflicts" value="" onchange="setVar(this)" />No</label>
+        </div>
+        
+        <h2>Once you have answered the above questions, click the below button.</h2>
+        <button class="big green" onclick="searchList();">Search</button>
+        <span class="known advinfo">
+            <br/><br/>
+            Alternatively, you can <button class="yellow" onclick="searchList('all');">show all OSes</button> sorted alphabetically.
+        </span>
+    </div>
+    <div class="content" id="results"></div>
+</body>
+</html>
