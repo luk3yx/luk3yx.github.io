@@ -167,7 +167,31 @@
         url:   "https://www.debian.org",
         logo:  "https://www.debian.org/logos/openlogo-nd.svg",
         ram:   512,
-        cpu:   1024,
+        cpu:   768,
+        bits:  32,
+        
+        conflicts: ["Debian (MATE)"],
+      },
+      
+      {
+        title: "Debian (MATE)",
+        theme: "traditional",
+        url:   "https://www.debian.org",
+        logo:  "https://www.debian.org/logos/openlogo-nd.svg",
+        ram:   1024,
+        cpu:   768,
+        bits:  32,
+        
+        conflicts ["Debian (GNOME)"],
+      },
+      
+      {
+        title: "Debian (GNOME)",
+        theme: "modern",
+        url:   "https://www.debian.org",
+        logo:  "https://www.debian.org/logos/openlogo-nd.svg",
+        ram:   2048,
+        cpu:   4096,
         bits:  32,
       },
     ]
