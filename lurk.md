@@ -11,6 +11,7 @@ All commands are prefixed with a `.`.
 
 ## Calculations and conversions
 These commands do not require any permissions.
+
 | Command       | Description | Syntax |
 | ------------- | ----------- | ------ |
 | **c**, calc   | Calculates an expression. | .c `5 + 5` |
@@ -22,6 +23,7 @@ These commands do not require any permissions.
 
 ## Channel administration
 These commands require you have at least halfops in the channel.
+
 | Command       | Description | Syntax |
 | ------------- | ----------- | ------ |
 | **ban**       | Bans a user from the channel. | .ban \<user> |
@@ -35,6 +37,7 @@ These commands require you have at least halfops in the channel.
 
 ## Fun and games
 These commands are fun to use and abuse&#x2122;!
+
 | Command       | Description | Syntax |
 | ------------- | ----------- | ------ |
 | **fortune**   | Tells you a fortune from the UNIX `fortune` command. | .fortune |
@@ -46,6 +49,7 @@ These commands are fun to use and abuse&#x2122;!
 
 ## Miscellaneous commands
 Useful commands that do not fit into any other categories.
+
 | Command       | Description | Syntax |
 | ------------- | ----------- | ------ |
 | **!**         | A prefix for DuckDuckGo! bangs. Do .! to see a list of subcommands. | .!ddg ubuntu |
@@ -55,6 +59,7 @@ Useful commands that do not fit into any other categories.
 | **whoami**    | Tells you who the bot thinks you are. | .whoami |
 
 ## Random numbers
+
 | Command       | Description | Syntax |
 | ------------- | ----------- | ------ |
 | **d**, dice   | Rolls dice. | .d \<amount>d\<sides> |
@@ -62,6 +67,7 @@ Useful commands that do not fit into any other categories.
 | **rand**      | Generates a random number, optionally between *min* and *max*. | .rand [[min] max] |
 
 ## Text manipulation
+
 | Command       | Description | Syntax |
 | ------------- | ----------- | ------ |
 | **&aelig;**, ae | Adds *&aelig;* and *&oelig;* into text. | .ae \<text> |
@@ -73,6 +79,7 @@ Useful commands that do not fit into any other categories.
 
 ## Time
 Some commands are not shown here, as they do not have many uses.
+
 | Command       | Description | Syntax |
 | ------------- | ----------- | ------ |
 | **t**, time   | Gets the current time. | .t [tzdata timezone] |
@@ -83,6 +90,7 @@ Some commands are not shown here, as they do not have many uses.
 
 ## Translating and spell checking
 These commands use [Google Translate](https://translate.google.com).
+
 | Command       | Description | Syntax |
 | ------------- | ----------- | ------ |
 | **spellcheck** | Checks the spelling of a word. | .spellcheck \<word> |
