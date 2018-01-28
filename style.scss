@@ -322,11 +322,19 @@ input[type=checkbox] {
 .forceblur {
     cursor: not-allowed;
 }
-.code {
+code, .code {
     background-color: $accent-colour;
     border: 1px solid #aaa;
     font-family: "Ubuntu Mono", monospace;
     padding: 0.2em;
     border-radius: 5px;
     display: inline-block;
+}
+
+table {
+    border-collapse: collapse;
+}
+td, th {
+    border: 1px solid $accent-colour;
+    padding: 5px;
 }
