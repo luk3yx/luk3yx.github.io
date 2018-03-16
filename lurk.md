@@ -17,7 +17,8 @@ These commands do not require any permissions.
 | **c**, calc   | Calculates an expression. | .c `5 + 5` |
 | **cur**       | Gets the exchange rate for a currency. | .cur `5` `USD` in `EUR` |
 | **length**    | Converts between units of length. | .length `100mm` |
-| **py**        | Runs Python2 code. | .py \<code> |
+| **py**, py3   | Runs Python3 code. | .py \<code> |
+| **py2**       | Runs Python2 code. | .py2 \<code> |
 | **temp**      | Converts between units of temperature. | .temp `100K` |
 | **weight**    | Converts between units of weight. | .weight `5oz` |
 
@@ -31,7 +32,7 @@ These commands require you have at least halfops in the channel.
 | **mute**, quiet | Mutes a user on the channel. | .mute \<user> |
 | **tmask**     | Set the topic mask for the channel, for use with *.topic*. | .tmask \<topic mask, where '{}' is the location to put the topic> |
 | **topic**     | Changes the topic of the channel. | .topic \<topic> |
-| **showmaskmask**     | Shows the current topic mask. | .showmask |
+| **showmask**     | Shows the current topic mask. | .showmask |
 | **unban**     | Unbans a user from the channel. | .unban \<user> |
 | **unmute**, unquiet | Unmutes a user on the channel. | .unmute \<user> |
 
