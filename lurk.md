@@ -72,6 +72,8 @@ Useful commands that do not fit into any other categories.
 | Command       | Description | Syntax |
 | ------------- | ----------- | ------ |
 | **&aelig;**, ae | Adds *&aelig;* and *&oelig;* into text. | .ae \<text> |
+| **b64**, base64 | Encodes text into base64. | .base64 \<text> |
+| **b64d**, base64-d | Decodes base64-encoded text. | .base64-d \<base64> |
 | **lower**     | Converts text to lowercase. | .lower \<text> |
 | **rev**       | Reverses text. | .rev \<text> |
 | **silly**     | Randomizes capitalization througout the text | .silly \<text> |
