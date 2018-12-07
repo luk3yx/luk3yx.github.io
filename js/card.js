@@ -5,14 +5,15 @@
 layout: compress
 ---
 
-helpers.params.delete('type');
-helpers.params.delete('submit');
-
-for (var i of helpers.params.keys()) {
-    if (! helpers.params.get(i)) {
+var params = helpers.getParams();
+for (var i in params) {
+    if (! params[i]) {
         helpers.params.delete(i);
     }
 }
+
+helpers.params.delete('type');
+helpers.params.delete('submit');
 
 var data = '🎄' + btoa(helpers.params.toString());
 
