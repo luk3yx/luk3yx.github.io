@@ -6,7 +6,7 @@
 // Variables
 
 $font-stack:    'Roboto', 'Ubuntu', 'Segoe UI', 'Arial', 'sans-serif';
-$background:    #EFEFEF;
+$background:    #FFFFFF;
 $accent-colour: #b0bec5;
 $accent-fg:     black;
 $text-colour:   black;
@@ -28,13 +28,16 @@ html, body {
     background: $background;
     padding: 0;
     margin: 0;
-}
-h1, h2, h3, h4, h5, h6, p, body, input, textarea, button, li, a {
     color: $text-colour;
     font-family: $font-stack;
 }
+a {
+    color: #0d47a1;
+    text-decoration: none;
+}
 h1 {
     font-size: 30px;
+    font-weight: 100;
 }
 
 .smallprint {
@@ -68,7 +71,7 @@ h1 {
     border-bottom: $border;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
     border-radius: 0 0 2px 2px;
-    
+
     h1 {
         font-weight: 300;
         font-size: 32px;
@@ -76,13 +79,12 @@ h1 {
         margin-top: -$padding + 2px;
         text-align: center;
     }
-    
+
     a {
-        text-decoration: none;
         color: $accent-fg;
         font-family: 'Ubuntu';
     }
-    
+
     img {
         position: fixed;
         left: 0;
@@ -115,11 +117,11 @@ hr {
         min-height: 27px;
         height: auto;
         padding-bottom: 0;
-        
+
         h1 {
             font-size: 6vw;
         }
-        
+
         img {
             max-height: 35px;
             min-height: 20px;
@@ -134,79 +136,17 @@ hr {
     h1, h2, h3, h4, h5, h6, p, li, body {
         text-align: center;
     }
-    //h1, h2, h3, h4, h5, h6, p, body, input, textarea, button, li, a {
-    //    font-family: $mobile-fonts;
-    //}
+
     li {
         list-style-type: none;
     }
+
+    .indent a {
+        padding: 5px;
+        display: inline-block;
+    }
 }
 
-/*
-.hamburgerbtn {
-    position: absolute;
-    top: 0;
-    left: 0;
-    color: black;
-    font-size: 34px;
-}
-.hamburger {
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
-    z-index: -100;
-}
-.hamburgermenu {
-    display: none;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 400px;
-    color: black;
-    border-right: 2px solid #000000 !important;
-    border-bottom: 2px solid #000000 !important;
-    z-index: 9;
-}
-.hamburgermenu .hamburgerbtn {
-    font-size: 32px;
-    position: relative;
-    display: block;
-}
-.hamburgermenu, .hamburgermenu p {
-    background-color: $accent-colour;
-}
-.hamburger:checked ~ .hamburgermenu {
-    display: block;
-}
-.hamburger:checked ~ .wrapper {
-    position: fixed;
-    display: block;
-    background-color: black;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    opacity: 0.5;
-    filter: alpha(opacity=50);
-    z-index: 7;
-}
-.hamburger:checked ~ .smallprint {
-    position: fixed;
-    display: block;
-    background-color: $accent-colour;
-    left: 0px;
-    bottom: 0;
-    margin: 0px !important;
-    width: 400px;
-    z-index: 8;
-    color: black !important;
-    border-top: 2px solid #000000 !important;
-    border-right: 2px solid #000000 !important;
-}
-.hamburger:checked ~ .smallprint h5 a, .hamburger:checked ~ .smallprint h5 {
-    color: black;
-}
-*/
 .hashshow {
     display: none;
 }
@@ -215,25 +155,16 @@ hr {
 }
 
 .new {
-    //background: url("/images/glitter.gif");
     overflow: hidden;
     display: inline-block;
-    /*clear: both;
-    float: left;*/
     margin: 0px;
     padding: $padding;
-    border: 1px solid $accent-colour;
-    border-radius: $padding;
+    font-size: 1.5em;
+    font-weight: 200;
 }
 
 a:hover {
-    background-color: $accent-colour;
-    color: $accent-fg;
-    text-decoration: none;
-}
-
-a:hover img {
-    background-color: $accent-colour;
+    text-decoration: underline;
 }
 
 .centre, .smallprint {
@@ -244,11 +175,11 @@ a:hover img {
     background-color: transparent;
 }
 .noselect, #loadscreen, .forceblur, .blur:not(:hover), .button {
-   user-select: none;
-   -moz-user-select: -moz-none;
+   -ms-user-select: none;
    -khtml-user-select: none;
    -webkit-user-select: none;
-   -ms-user-select: none;
+   -moz-user-select: -moz-none;
+   user-select: none;
 }
 #loadscreen {
     background-color: $accent-colour;
@@ -288,7 +219,7 @@ a:hover img {
 a, button {
     cursor: pointer;
 }
-.button, button, input[type=submit], select {
+.button, button, input[type=submit] {
     font-weight: 400 !important;
     font-size: 12px !important;
     padding: 4px 4px !important;
@@ -301,7 +232,7 @@ a, button {
     text-align: center;
     text-shadow: none;
     box-shadow: 1px 1px 0 #000000;
-    
+
     &:hover {
         background: #FFFFFF;
         color: #111111;
@@ -317,8 +248,12 @@ input[type=checkbox] {
     background-color: #FFFFFF;
 }
 @media only screen and (min-width: 480px) {
-    a, a img:not(:hover), a:not(:hover), .blur, a img, .title, .button, button, select, input {
+    a, a img:not(:hover), a:not(:hover), .blur, a img, .title, .button, button, input {
     	@include transition($transition);
+    }
+
+    .indent {
+        margin-left: 0.5em;
     }
 }
 .forceblur {

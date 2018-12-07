@@ -28,3 +28,5 @@ function deleteContextMenu() {
 //    document.getElementById("contextMenu").parentElement.removeChild(document.getElementById("contextMenu"));
     document.getElementById("contextMenu").style.display = "none";
 }
+
+hideLoadScreen();

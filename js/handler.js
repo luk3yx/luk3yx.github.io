@@ -1,27 +1,41 @@
-// It isn't really worth copyrighting this script...
+---
+# JavaScript script dispatcher
 
-// The 'getParam' function (stated below) is NOT copyrighted.
-        var getParam = function () {
-            var query_string = {};
-            var query = urlOpts.substring(1);
-            var vars = query.split("&");
-            for (var i=0;i<vars.length;i++) {
-                var pair = vars[i].split("=");
-                if (typeof query_string[pair[0]] === "undefined") {
-                    query_string[pair[0]] = decodeURIComponent(pair[1]);
-                } else if (typeof query_string[pair[0]] === "string") {
-                    var arr = [ query_string[pair[0]],decodeURIComponent(pair[1]) ];
-                    query_string[pair[0]] = arr;
-                } else {
-                    query_string[pair[0]].push(decodeURIComponent(pair[1]));
-                }
-            } 
-              return query_string;
-        }();
-window.history.replaceState({}, "luk3yx's website", "/js");
-showLoadScreen();
-if (getParam.type == undefined) {
-    loadScript("jsinfo");
+layout: compress
+---
+
+helpers.showLoadScreen();
+
+(function() {
+
+var script = helpers.params.get('type');
+
+/* Trivial to implement redirects */
+var redirects = {
+    'approve':          '/403.html',
+    'archive':          '/410.html',
+    'birthdaycard':     'card',
+    'fish':             '/418.html',
+    'iso':              'http://cdimage.ubuntu.com',
+    'login':            '/403.html',
+    'redirect':         '/418.html',
+    'teapot':           '/418.html',
+    'xmascard':         'card',
+};
+
+if (redirects[script]) {
+    if (redirects[script].indexOf('/') > -1) {
+        window.stop();
+        window.location.href = helpers.baseurl + redirects[script];
+    } else {
+        helpers.loadScript(redirects[script]);
+    }
+} else if (script) {
+    if (! helpers.loadScript(script)) {
+        window.stop();
+        window.location.href = helpers.baseurl + '404.html';
+    };
 } else {
-    loadScript(getParam.type);
+    helpers.loadScript('jsinfo');
 }
+})();

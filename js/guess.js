@@ -1,36 +1,25 @@
-// Copyright 2016 by luk3yx.
-// All rights reserved.
-debug("Guess script loaded. Guessing...");
-var oldLink = decodeURIComponent(getParam.oldlink);
+//
+// guess.js - Take a guess at what the user wants
+//
 
-// The below function is NOT copyrighted
-function getDomainName(link) {
-    if (link.indexOf("://") > -1) {
-        // Get rid of the http:// if existent, the pathname, and the port.
-        return link.split('/')[2].split(':')[0];
-    } else {
-        // If the http:// is not existent, just get rid of the pathname and port
-        return link.split('/')[0].split(':')[0];
-    }
-}
-// The above function is NOT copyrighted
+(function() {
 
-var oldDomain = getDomainName(oldLink);
-type = '';
-if (oldDomain == "youtube.com") {
+var oldlink = decodeURIComponent(window.location.hash.substr(1));
+
+helpers.params.set('oldlink',  oldlink);
+helpers.params.set('referrer', document.referrer);
+
+var type = 'jsinfo';
+if (helpers.getDomainName(oldlink) == "youtube.com") {
     type = 'youtube-cinema';
-}
-if (oldLink == "cookies-accept") {
+} else if (oldlink == "cookies-accept") {
     type = 'cookies-accept';
+} else if (oldlink.startsWith('🎄')) {
+    type = 'card-generator';
+} else if (oldlink.startsWith('http')) {
+    type = 'translate';
 }
 
-if (type == "") {
-    if (oldLink == "") {
-        type = 'jsinfo';
-    } else {
-        type = 'translate';
-    }
-}
-debug("Type guessed. The type is " + type);
-debug("Loading " + type + ".js...");
-loadScript(type);
+helpers.loadScript(type);
+
+})();

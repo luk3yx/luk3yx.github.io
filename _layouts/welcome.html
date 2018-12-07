@@ -46,20 +46,25 @@ All rights reserved.
         background-size: cover;
         background-attachment: fixed;
     }
+    .imgwrapper h1, .imgwrapper h2, #credit {
+        font-family: Ubuntu;
+    }
     .imgwrapper h1 {
         color: white;
         font-size: 12.5vh !important;
         position: sticky;
         top: 56px;
         padding-bottom: 48px !important;
+        font-weight: 100;
     }
     .imgwrapper h2 {
         color: white;
         top: 0 !important;
         position: sticky;
         font-size: 32px;
-        padding-bottom: 5px !important;
-        font-family: Ubuntu;
+        /* padding-bottom: 5px !important; */
+        padding-bottom: 30vh !important;
+        font-weight: 100;
     }
     iframe {
         position: fixed;
@@ -77,6 +82,9 @@ All rights reserved.
         bottom: 16px;
         right: 16px;
         z-index: 1;
+    }
+    #credit i {
+        font-weight: 100;
     }
     .title {
         transition: ease-in-out 250ms 25ms;
@@ -102,10 +110,16 @@ All rights reserved.
         z-index: 2;
         position: relative;
         width: 100%;
-        background: #EFEFEF;
+        background: #FFFFFF;
     }
     body {
         margin-top: 0 !important;
+    }
+
+    @media only screen and (max-width: 480px) {
+        .imgwrapper h2 {
+            position: relative;
+        }
     }
     </style>
 </head>
@@ -133,11 +147,11 @@ All rights reserved.
 </div>
 <div id="welcomewrapper">
     {% include title.html %}
-    
+
     <div class="content">
         {{ content }}
     </div>
-    
+
     {% include smallprint.html %}
 </div>
 </body>

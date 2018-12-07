@@ -1,5 +1,2 @@
-// Script to handle legacy requests.
-
-// You think I would copyright this?
-// Of course not.
+// ...what requests does this script even handle?
 loadScript(getParam.file);
