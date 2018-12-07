@@ -82,7 +82,7 @@ h1 {
 
     a {
         color: $accent-fg;
-        font-family: 'Ubuntu';
+        font-family: 'Ubuntu', $font-stack;
     }
 
     img {
@@ -93,6 +93,12 @@ h1 {
         padding: 2px;
         font-size: 36px;
         @include transition($transition)
+    }
+}
+
+#welcome .imgwrapper {
+    h1, h2, #credit {
+        font-family: 'Ubuntu', $font-stack;
     }
 }
 

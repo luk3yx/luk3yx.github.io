@@ -14,25 +14,25 @@ var card = (helpers.params.get('card') || '').toLowerCase();
 
 var dfmsg = '';
 switch (card) {
-    case "xmas":
-    case "christmas":
-        greeting = "Merry Christmas";
+    case 'xmas':
+    case 'christmas':
+        greeting = 'Merry Christmas';
         dfmsg = 'Jingle bells, jingle bells,'   +
                 '\nJingle all the way.'         +
                 '\nOh what fun it is to ride,'  +
                 '\nIn a one-horse open sleigh!';
         break;
-    case "birthday":
-        greeting = "Happy Birthday";
+    case 'birthday':
+        greeting = 'Happy Birthday';
         break;
     default:
-        greeting = "April Fools";
-        dfmsg = "I have no idea what card\nI am supposed to make.";
+        greeting = 'April Fools';
+        dfmsg = 'I have no idea what card\nI am supposed to make.';
         break;
 }
 
 if (! dfmsg) {
-    dfmsg = greeting + ", and\nbest wishes for the future.";
+    dfmsg = greeting + ', and\nbest wishes for the future.';
 }
 
 // Get all the parameters
@@ -44,7 +44,7 @@ var colour  = helpers.params.get('colour')  || helpers.params.get('color');
 var img     = helpers.params.get('img');
 
 // Parse them
-var title = greeting + "!";
+var title = greeting + '!';
 if (img == 'URL') {
     img = null;
 }
@@ -67,17 +67,17 @@ if (img) {
     // More code to support legacy options
     var url = helpers.url + '/images/';
     switch (img) {
-        case "1": // The older format had '1-6',
-        case "2": // not xmas[n] and birthday[n].
-        case "3": // This is because there only
-        case "4": // used to be a Christmas
-        case "5": // card generator.
-        case "6":
+        case '1': // The older format had '1-6',
+        case '2': // not xmas[n] and birthday[n].
+        case '3': // This is because there only
+        case '4': // used to be a Christmas
+        case '5': // card generator.
+        case '6':
             imgurl = url + 'xmas' + img + '.jpg';
             break;
         default:
             if (img) {
-                imgurl = url + img + ".jpg";
+                imgurl = url + img + '.jpg';
             }
             break;
     }

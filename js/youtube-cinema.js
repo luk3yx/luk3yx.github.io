@@ -2,5 +2,5 @@
 // All rights reserved.
 
 var raw  = helpers.params.get('oldlink');
-var link = link.replace("/watch?v=", "/embed/").replace("/watch", "/embed");
+var link = link.replace('/watch?v=', '/embed/').replace('/watch', '/embed');
 window.location.href = link;

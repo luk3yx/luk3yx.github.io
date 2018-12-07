@@ -30,25 +30,17 @@ helpers = {
             this.addLegacyFunctions();
         }
         var scriptElement = document.createElement('script');
-        scriptElement.setAttribute("src", "/js/" + this.escapeHTML(script) +
-            ".js");
+        scriptElement.setAttribute('src', this.baseurl + '/js/' +
+            this.escapeHTML(script) + '.js');
         document.head.appendChild(scriptElement);
         return true;
     },
 
-    loadCSS: function(url) {
-        var scriptElement = document.createElement('link');
-        scriptElement.setAttribute("rel", "stylesheet");
-        scriptElement.setAttribute("type", "text/css");
-        scriptElement.setAttribute("src", "/css/" + url + ".css");
-        document.head.appendChild(scriptElement);
-    },
-
     cacheImage: function(url) {
-        var cachedImage = document.createElement("img");
-        cachedImage.style.display = "none";
-        cachedImage.setAttribute("src", url);
-        document.getElementsByTagName("HTML")[0].insertBefore(cachedImage, document.head);
+        var cachedImage = document.createElement('img');
+        cachedImage.style.display = 'none';
+        cachedImage.setAttribute('src', url);
+        document.getElementsByTagName('HTML')[0].insertBefore(cachedImage, document.head);
     },
 
     deleteElement: function(elem) {
@@ -71,14 +63,14 @@ helpers = {
     showLoadScreen: function() {
         if (! document.getElementById('loadscreen')) {
             document.body.style.overflow = 'hidden';
-            var loadScreen = document.createElement("div");
-            loadScreen.setAttribute("id", "loadscreen");
-            document.getElementsByTagName("HTML")[0].insertBefore(loadScreen, document.head);
-            var loadScreenWrapper = document.createElement("h1");
-            var loadScreenWrapper2 = document.createElement("center");
-            var loadScreenImg = document.createElement("img");
-            loadScreenImg.setAttribute("alt", "Loading...");
-            loadScreenImg.setAttribute("src", "/images/loadscreen.gif");
+            var loadScreen = document.createElement('div');
+            loadScreen.setAttribute('id', 'loadscreen');
+            document.getElementsByTagName('HTML')[0].insertBefore(loadScreen, document.head);
+            var loadScreenWrapper = document.createElement('h1');
+            var loadScreenWrapper2 = document.createElement('center');
+            var loadScreenImg = document.createElement('img');
+            loadScreenImg.setAttribute('alt', 'Loading...');
+            loadScreenImg.setAttribute('src', '/images/loadscreen.gif');
             loadScreen.appendChild(loadScreenWrapper);
             loadScreenWrapper.appendChild(loadScreenWrapper2);
             loadScreenWrapper2.appendChild(loadScreenImg);
@@ -111,7 +103,7 @@ helpers = {
 
     /* Modified from https://stackoverflow.com/a/23945027 */
     getDomainName: function(link) {
-        if (link.indexOf("://") > -1) {
+        if (link.indexOf('://') > -1) {
             return link.split('/')[2].split(':')[0];
         } else {
             return link.split('/')[0].split(':')[0];
