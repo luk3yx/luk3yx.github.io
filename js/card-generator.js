@@ -65,6 +65,7 @@ colour  = helpers.escapeHTML(colour);
 // Get the image URL
 if (img) {
     // More code to support legacy options
+    var url = helpers.url + '/images/';
     switch (img) {
         case "1": // The older format had '1-6',
         case "2": // not xmas[n] and birthday[n].
@@ -72,11 +73,11 @@ if (img) {
         case "4": // used to be a Christmas
         case "5": // card generator.
         case "6":
-            imgurl = helpers.url + "/images/xmas" + img + ".jpg";
+            imgurl = url + 'xmas' + img + '.jpg';
             break;
         default:
             if (img) {
-                imgurl = helpers.url + "/images/" + img + ".jpg";
+                imgurl = url + img + ".jpg";
             }
             break;
     }

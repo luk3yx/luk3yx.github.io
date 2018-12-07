@@ -26,14 +26,18 @@ var redirects = {
 if (redirects[script]) {
     if (redirects[script].indexOf('/') > -1) {
         window.stop();
-        window.location.href = helpers.baseurl + redirects[script];
+        var url = redirects[script];
+        if (url.indexOf('://') < 0) {
+            url = helpers.baseurl + url;
+        }
+        window.location.href = url;
     } else {
         helpers.loadScript(redirects[script]);
     }
 } else if (script) {
     if (! helpers.loadScript(script)) {
         window.stop();
-        window.location.href = helpers.baseurl + '404.html';
+        window.location.href = helpers.baseurl + '/404.html';
     };
 } else {
     helpers.loadScript('jsinfo');
