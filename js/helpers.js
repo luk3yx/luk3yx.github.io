@@ -136,5 +136,3 @@ helpers = {
         'youtube-cinema':   2,
     },
 };
-
-// window.history.replaceState(null, document.title, '/js');

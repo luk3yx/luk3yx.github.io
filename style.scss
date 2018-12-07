@@ -228,28 +228,31 @@ a, button {
 .button, button, input[type=submit] {
     font-weight: 400 !important;
     font-size: 12px !important;
-    padding: 4px 4px !important;
+    padding: 5px 10px !important;
     text-decoration: none;
     background: $accent-colour;
-    border: 1px solid #000000;
-    border-radius: 5px;
-    color: #000000;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    color: black;
     display: inline-block;
     text-align: center;
     text-shadow: none;
-    box-shadow: 1px 1px 0 #000000;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    outline: none;
 
     &:hover {
         background: #FFFFFF;
         color: #111111;
     }
+
+    &:active {
+        position: relative;
+        top: 1px;
+        left: 1px;
+        box-shadow: 0px 0px 0 #000000;
+    }
 }
-.button:active, button:active, input[type=submit]:active {
-    position: relative;
-    top: 1px;
-    left: 1px;
-    box-shadow: 0px 0px 0 #000000;
-}
+
 input[type=checkbox] {
     background-color: #FFFFFF;
 }

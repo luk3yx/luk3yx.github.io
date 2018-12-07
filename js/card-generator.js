@@ -60,7 +60,7 @@ title   = helpers.escapeHTML(title);
 from    = helpers.escapeHTML(from);
 msg     = helpers.escapeHTML(msg, true);
 img     = helpers.escapeHTML(img);
-colour  = helpers.escapeHTML(colour);
+colour  = colour.replace(/[^#A-Za-z0-9\-_]/g, '');
 
 // Get the image URL
 if (img) {
@@ -93,8 +93,8 @@ if (imgurl) {
 // Set the text colour
 var morecss = '';
 if (colour) {
-    morecss = '<style type="text/css" id="txtcolour">* { color: ' +
-        helpers.escapeHTML(colour) + ' !important; }</style>';
+    morecss = '<style type="text/css" id="txtcolour">* { color: ' + colour +
+        ' !important; }</style>';
 }
 
 var html = `<!DOCTYPE html>
