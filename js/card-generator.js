@@ -60,7 +60,7 @@ title   = helpers.escapeHTML(title);
 from    = helpers.escapeHTML(from);
 msg     = helpers.escapeHTML(msg, true);
 img     = helpers.escapeHTML(img);
-colour  = colour.replace(/[^#A-Za-z0-9\-_]/g, '');
+colour  = (colour || '').replace(/[^#A-Za-z0-9\-_]/g, '');
 
 // Get the image URL
 if (img) {
