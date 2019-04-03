@@ -67,9 +67,11 @@ content = docstart + title + "</title>" + css + morecss + "</head><body>" + imgt
 
 if (dataURL == "no") {
     window.addEventListener('load', function() {
+        document.open();
         document.write(content);
         hideLoadScreen();
         document.body.overflow = 'hidden';
+        document.close();
     });
 } else {
     doc = btoa(content);
