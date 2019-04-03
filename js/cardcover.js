@@ -61,7 +61,54 @@ if (typeof colour !== 'undefined') {
 
 br = atob("PGJyLz4K");
 footer = "";
-css = '<style type="text/css">' + atob("QGltcG9ydCB1cmwoaHR0cHM6Ly9mb250cy5nb29nbGVhcGlzLmNvbS9jc3M/ZmFtaWx5PVVidW50dSk7CiogewogICAgY29sb3I6IGJsYWNrOwogICAgdGV4dC1zaGFkb3c6ICNGRkZGRkYgMCAwIDRweDsKICAgIGZvbnQtZmFtaWx5OidVYnVudHUnLCdSb2JvdG8nLCdTZWdvZSBVSScsJ0FyaWFsJywnc2Fucy1zZXJpZicgIWltcG9ydGFudDsKICAgIHotaW5kZXg6IDU7Cn0KI2JhY2tpbWcgewogICAgd2lkdGg6IDEwMCU7CiAgICBoZWlnaHQ6IDEwMCU7CiAgICBwb3NpdGlvbjogZml4ZWQ7CiAgICB0b3A6IDA7CiAgICBib3R0b206IDA7CiAgICBsZWZ0OiAwOwogICAgcmlnaHQ6IDA7CiAgICB6LWluZGV4OiAxICFpbXBvcnRhbnQ7Cn0KLmNvbnRlbnQgewogICAgd2lkdGg6IDEwMCU7CiAgICBoZWlnaHQ6IDEwMCU7CiAgICBwb3NpdGlvbjogYWJzb2x1dGU7CiAgICB0b3A6IDA7CiAgICBib3R0b206IDA7CiAgICBsZWZ0OiAwOwogICAgcmlnaHQ6IDA7CiAgICB6LWluZGV4OiA0ICFpbXBvcnRhbnQ7CiAgICBtYXJnaW46IDVweDsKfQojdGl0bGUgewogICAgdGV4dC1hbGlnbjogbGVmdDsKICAgIHBvc2l0aW9uOiBmaXhlZDsKICAgIGxlZnQ6IDEwJTsKICAgIHRvcDogNTBweDsKICAgIGZvbnQtc2l6ZTogNTBweDsKfQojZnJvbSB7CiAgICB0ZXh0LWFsaWduOiByaWdodDsKICAgIHBvc2l0aW9uOiBmaXhlZDsKICAgIHJpZ2h0OiAxNSU7CiAgICBib3R0b206IDIwJTsKICAgIGZvbnQtc2l6ZTogMzZweDsKfQpib2R5IHsKICAgIG92ZXJmbG93OiBoaWRkZW4gIWltcG9ydGFudDsKfQo=") + "</style>";
+css = `<style type="text/css">
+@import url(https://fonts.googleapis.com/css?family=Ubuntu);
+* {
+    color: black;
+    text-shadow: #000000 0 0 4px;
+    font-family:'Ubuntu','Roboto','Segoe UI','Arial','sans-serif' !important;
+    z-index: 5;
+}
+#backimg {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1 !important;
+}
+.content {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 4 !important;
+    margin: 5px;
+}
+#title {
+    text-align: left;
+    position: fixed;
+    left: 10%;
+    top: 50px;
+    font-size: 50px;
+}
+#from {
+    text-align: right;
+    position: fixed;
+    right: 15%;
+    bottom: 20%;
+    font-size: 36px;
+}
+body {
+    overflow: hidden !important;
+}
+</style>
+`;
 docstart = atob("PCFET0NUWVBFIGh0bWwgUFVCTElDICItLy9XM0MvL0RURCBYSFRNTCAxLjAgVHJhbnNpdGlvbmFsLy9FTiIKICAgICAgICAiaHR0cDovL3d3dy53My5vcmcvVFIveGh0bWwxL0RURC94aHRtbDEtdHJhbnNpdGlvbmFsLmR0ZCI+CjxodG1sIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sIj4KPGhlYWQ+CjxtZXRhIGh0dHAtZXF1aXY9ImNvbnRlbnQtdHlwZSIgCiAgICAgICAgY29udGVudD0idGV4dC9odG1sO2NoYXJzZXQ9dXRmLTgiIC8+Cjx0aXRsZT4K");
 content = docstart + title + "</title>" + css + morecss + "</head><body>" + imgtag + "<div class='content'>" + br + br + "<h1 id='title'>" + title + '</h1>' + br + br + '<h1 id="from">' + from + "</h1></div></body></html>";
 
