@@ -66,7 +66,7 @@ docstart = atob("PCFET0NUWVBFIGh0bWwgUFVCTElDICItLy9XM0MvL0RURCBYSFRNTCAxLjAgVHJ
 content = docstart + title + "</title>" + css + morecss + "</head><body>" + imgtag + "<div class='content'>" + br + br + "<h1 id='title'>" + title + '</h1>' + br + br + '<h1 id="from">' + from + "</h1></div></body></html>";
 
 if (dataURL == "no") {
-    window.addEventListener(function() {
+    window.addEventListener('load', function() {
         document.write(content);
         hideLoadScreen();
         document.body.overflow = 'hidden';
