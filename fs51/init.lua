@@ -123,15 +123,12 @@ local elems = {}
 do
     for _, elem in ipairs({'tooltip', 'image', 'background', 'pwdfield',
             'field', 'textarea', 'button', 'textlist', 'tabheader', 'dropdown',
-            'scrollbar', 'table', 'image_button', 'button_exit',
-            'image_button_exit', 'item_image_button'}) do
-        elems[elem] = 2
+            'scrollbar', 'table', 'image_button', 'button_exit', 'checkbox',
+            'image_button_exit', 'item_image_button', 'position', 'anchor',
+            'container', 'vertlabel'}) do
+        elems[elem] = true
     end
-    for _, elem in ipairs({'position', 'anchor', 'container', 'vertlabel',
-            'checkbox'}) do
-        elems[elem] = 1
-    end
-    for elem, offsets in pairs(random_offsets) do elems[elem] = #offsets end
+    for elem, offsets in pairs(random_offsets) do elems[elem] = true end
 end
 
 -- Fix individual number
