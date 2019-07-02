@@ -1,0 +1,54 @@
+---
+title: Minetest formspec converter
+layout: default
+---
+
+<h1>Minetest formspec converter</h1>
+
+<p>
+Attempts to convert real_coordinates formspecs back to Minetest 5.0-compatible
+formspecs. Note that this is pre-alpha and uses a lot of "magic numbers"
+internally.
+<a href="https://github.com/luk3yx/luk3yx.github.io/tree/master/fs51">
+    View source.</a>
+</p>
+
+<h2 id="loader">Loading... (requires JS)</h2>
+
+<script src="https://unpkg.com/fengari-web/dist/fengari-web.js"
+    type="text/javascript"></script>
+<script type="application/lua" src="init.lua" async></script>
+
+<h3>
+    Paste your formspec (containing <code>real_coordinates[true]</code>) here:
+</h3>
+<textarea id="textarea1" style="width: 100%; min-height: 250px;"></textarea>
+
+<h3>
+    The converted output should be displayed here.
+</h3>
+<textarea readonly id="textarea2" style="width: 100%; min-height: 250px;"></textarea>
+
+<script type="text/javascript" async defer>
+    var textarea1 = document.getElementById('textarea1');
+    var textarea2 = document.getElementById('textarea2');
+    textarea1.value = textarea2.value = '';
+
+    function update() {
+        if (typeof fs51 === 'undefined') {
+            return window.setTimeout(50, update);
+        }
+        textarea2.value = fs51.fix_formspec(textarea1.value);
+    }
+
+    window.addEventListener('load', function() {
+        var loader = document.getElementById('loader');
+        loader.parentElement.removeChild(loader);
+        textarea2.addEventListener('focus', update);
+        textarea1.addEventListener('keydown', update);
+        textarea1.addEventListener('keyup', update);
+        textarea1.addEventListener('change', update);
+    });
+</script>
+
+<i>Powered by <a href="https://fengari.io/">Fengari</a>.</i>
