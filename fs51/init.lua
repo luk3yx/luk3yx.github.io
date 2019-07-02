@@ -47,7 +47,7 @@ local function formspec_to_tables(spec)
         if s and e then
             rawargs, spec = spec:sub(2, s), spec:sub(e + 1)
         else
-            rawargs, spec = spec, false
+            rawargs, spec = spec:sub(2), false
         end
 
         -- Split everything
@@ -112,7 +112,7 @@ end
 local random_offsets = {
     box = {{0, 0}, {0.2, 0.125}},
     label = {{0, 0.3}},
-    field = {{-0.3, -0.33}},
+    field = {{-0.3, -0.324}},
     dropdown = {{0, 0}, {0.125, 0}},
 }
 
