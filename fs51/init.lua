@@ -135,20 +135,27 @@ end
 
 -- Fix individual number
 
+local function tostring_round(num)
+    if type(num) == 'number' and num == num then
+        num = math.floor((num * 100) + 0.5) / 100
+    end
+    return tostring(num)
+end
+
 local function get_coords(f, num, ...)
     local n = tonumber(num)
     if n and n == n then
-        return tostring(f(n, '', ...))
+        return tostring_round(f(n, '', ...))
     end
 
     local x, y = num:match('^%s*([0-9%.]+)%s*,%s*([0-9%.]+)%s*$')
     if x and y then
         local xn, yn = tonumber(x), tonumber(y)
         if xn and xn == xn then
-            x = tostring(f(xn, 'x', ...))
+            x = tostring_round(f(xn, 'x', ...))
         end
         if yn and yn == yn then
-            y = tostring(f(yn, 'y', ...))
+            y = tostring_round(f(yn, 'y', ...))
         end
         return x .. ',' .. y
     end
