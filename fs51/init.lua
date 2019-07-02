@@ -123,7 +123,8 @@ local elems = {}
 do
     for _, elem in ipairs({'tooltip', 'image', 'background', 'pwdfield',
             'field', 'textarea', 'button', 'textlist', 'tabheader', 'dropdown',
-            'scrollbar', 'table'}) do
+            'scrollbar', 'table', 'image_button', 'button_exit',
+            'image_button_exit', 'item_image_button'}) do
         elems[elem] = 2
     end
     for _, elem in ipairs({'position', 'anchor', 'container', 'vertlabel',
@@ -195,10 +196,10 @@ function mod.fix_formspec(spec)
             elem[2] = get_coords(function(num)
                 return (((num - 1) - (padding * 2)) / spacing) + 1
             end, elem[2])
-        -- elseif elems[elem[1]] == 2 then
-
         elseif elems[elem[1]] and elem[2] then
             elem[2] = fix_pos(elem[2])
+        elseif elem[1] == 'list' and elem[4] then
+            elem[4] = fix_pos(elem[4])
         end
 
         if random_offsets[elem[1]] then
