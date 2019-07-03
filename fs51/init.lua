@@ -110,10 +110,10 @@ end
 
 -- Random offsets
 local random_offsets = {
-    box = {{0, 0}, {0.2, 0.125}},
+    -- box = {{0, 0}, {0.2, 0.125}},
     label = {{0, 0.3}},
-    field = {{-0.3, -0.324}},
-    dropdown = {{0, 0}, {0.125, 0}},
+    -- field = {{-0.3, -0.324}},
+    dropdown = {{0, 0}, {-0.05, 0}},
 }
 
 local padding, spacing = 3/8, 5/4
@@ -122,13 +122,19 @@ local padding, spacing = 3/8, 5/4
 local elems = {}
 do
     for _, elem in ipairs({'tooltip', 'image', 'background', 'pwdfield',
-            'field', 'textarea', 'button', 'textlist', 'tabheader', 'dropdown',
-            'scrollbar', 'table', 'image_button', 'button_exit', 'checkbox',
-            'image_button_exit', 'item_image_button', 'position', 'anchor',
-            'container', 'vertlabel'}) do
+            'tabheader', 'scrollbar', 'table', 'checkbox', 'position',
+            'anchor', 'container', 'vertlabel', 'item_image'}) do
         elems[elem] = true
     end
     for elem, offsets in pairs(random_offsets) do elems[elem] = true end
+    for _, elem in ipairs({'textlist', 'scrollbar', 'table',
+            'dropdown', 'field', 'textarea', 'box'}) do
+        elems[elem] = 2
+    end
+    for _, elem in ipairs({'button', 'button_exit', 'image_button',
+            'image_button_exit', 'item_image_button'}) do
+        elems[elem] = 3
+    end
 end
 
 -- Fix individual number
@@ -168,6 +174,25 @@ local function fix_pos(num, dir)
     return ((num - padding) / spacing) -- - 1
 end
 
+local function fix_size(num, dir, t)
+    if type(num) == 'string' then return get_coords(fix_size, num, dir) end
+    print(num, dir, t)
+    if t == 3 then
+        -- Magic numbers
+        -- 0.5x0.5: 1.125
+        -- 1x1: 1
+        -- 2x2: 0.9
+        -- 3x3: 0.875
+
+        return num * 0.8 + 0.205 --+ (dir == 'y' and 0.03 or 0)
+    end
+
+    if dir == 'y' then
+        return num / (spacing - 0.0975)
+    end
+    return num / spacing
+end
+
 local function add_offsets(num, dir, offsets)
     if not offsets then
         return get_coords(add_offsets, num, dir)
@@ -187,14 +212,27 @@ function mod.fix_formspec(spec)
     spec = formspec_to_tables(spec)
 
     for _, elem in ipairs(spec) do
+
+        -- Hack to get buttons with custom heights
+        if (elem[1] == 'button' or elem[1] == 'button_exit') and #elem == 5 then
+            elem[1] = 'image_' .. elem[1]
+            table.insert(elem, 4, 'doors_blank.png')
+        end
+
         if elem[1] == 'real_coordinates' then
             elem[1] = false
-        elseif elem[1] == 'size' and elem[2] then
+        end
+
+        local data = elems[elem[1]]
+        if elem[1] == 'size' and elem[2] then
             elem[2] = get_coords(function(num)
                 return (((num - 1) - (padding * 2)) / spacing) + 1
             end, elem[2])
-        elseif elems[elem[1]] and elem[2] then
+        elseif data and elem[2] then
             elem[2] = fix_pos(elem[2])
+            if elem[3] and type(data) == 'number' then
+                elem[3] = fix_size(elem[3], data)
+            end
         elseif elem[1] == 'list' and elem[4] then
             elem[4] = fix_pos(elem[4])
         end
