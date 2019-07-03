@@ -112,7 +112,8 @@ end
 local random_offsets = {
     -- box = {{0, 0}, {0.2, 0.125}},
     label = {{0, 0.3}},
-    -- field = {{-0.3, -0.324}},
+    field = {{-0.3, -0.33}},
+    textarea = {{-0.3, -0.33}},
     dropdown = {{0, 0}, {-0.05, 0}},
 }
 
@@ -178,12 +179,6 @@ local function fix_size(num, dir, t)
     if type(num) == 'string' then return get_coords(fix_size, num, dir) end
     print(num, dir, t)
     if t == 3 then
-        -- Magic numbers
-        -- 0.5x0.5: 1.125
-        -- 1x1: 1
-        -- 2x2: 0.9
-        -- 3x3: 0.875
-
         return num * 0.8 + 0.205 --+ (dir == 'y' and 0.03 or 0)
     end
 
@@ -216,7 +211,7 @@ function mod.fix_formspec(spec)
         -- Hack to get buttons with custom heights
         if (elem[1] == 'button' or elem[1] == 'button_exit') and #elem == 5 then
             elem[1] = 'image_' .. elem[1]
-            table.insert(elem, 4, 'doors_blank.png')
+            table.insert(elem, 4, '')
         end
 
         if elem[1] == 'real_coordinates' then
@@ -225,8 +220,10 @@ function mod.fix_formspec(spec)
 
         local data = elems[elem[1]]
         if elem[1] == 'size' and elem[2] then
-            elem[2] = get_coords(function(num)
-                return (((num - 1) - (padding * 2)) / spacing) + 1
+            elem[2] = get_coords(function(num, dir)
+                local res = fix_size(num, dir) - padding * 2
+                if dir ~= 'y' then res = res + 0.36 end
+                return res
             end, elem[2])
         elseif data and elem[2] then
             elem[2] = fix_pos(elem[2])
