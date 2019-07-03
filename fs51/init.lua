@@ -112,9 +112,10 @@ end
 local random_offsets = {
     -- box = {{0, 0}, {0.2, 0.125}},
     label = {{0, 0.3}},
-    field = {{-0.3, -0.33}},
-    textarea = {{-0.3, -0.33}},
-    dropdown = {{0, 0}, {-0.05, 0}},
+    field = {{-0.3, -0.33}, {-0.2, 0}},
+    pwdfield = {{-0.3, -0.33}, {-0.2, 0}},
+    textarea = {{-0.3, -0.33}, {-0.2, 0}},
+    dropdown = {{0, 0}, {-0.15, 0}},
 }
 
 local padding, spacing = 3/8, 5/4
@@ -129,7 +130,7 @@ do
     end
     for elem, offsets in pairs(random_offsets) do elems[elem] = true end
     for _, elem in ipairs({'textlist', 'scrollbar', 'table',
-            'dropdown', 'field', 'textarea', 'box'}) do
+            'dropdown', 'field', 'pwdfield', 'textarea', 'box'}) do
         elems[elem] = 2
     end
     for _, elem in ipairs({'button', 'button_exit', 'image_button',
