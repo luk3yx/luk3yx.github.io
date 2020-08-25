@@ -16,11 +16,11 @@ These commands do not require any permissions.
 | ------------- | ----------- | ------ | ---------------- |
 | **c**, calc   | Calculates an expression. | .c `5 + 5` | Yes |
 | **cur**       | Gets the exchange rate for a currency. | .cur `5` `USD` in `EUR` | No |
-| **length**    | Converts between units of length. | .length `100mm` | No |
+| **length**    | Converts between units of length. | .length `100mm` | Yes |
 | **py**, py3   | Runs Python3 code. | .py \<code> | Yes |
 | **py2**       | Runs Python2 code. | .py2 \<code> | Yes |
-| **temp**      | Converts between units of temperature. | .temp `100K` | No |
-| **weight**    | Converts between units of weight. | .weight `5oz` | No |
+| **temp**      | Converts between units of temperature. | .temp `100K` | Yes |
+| **weight**    | Converts between units of weight. | .weight `5oz` | Yes |
 
 ## Channel administration
 These commands require you have at least halfops in the channel. None of these
@@ -50,6 +50,7 @@ These commands are fun to use and abuse&#x2122;!
 | **yay** | Yay! This command may be used with the `.` prefix, however it is optional. | Yay! | Yes |
 | **qotd** | Displays a quote of the day. *Quotes of the day can be sarcastic and/or offensive, read at your own risk.* | .qotd | Yes |
 | **cal**, calendar | Displays a calendar for the current month. | .cal | Yes |
+| **whip** | Whip | .whip <victim> | Yes |
 
 ## Miscellaneous commands
 Useful commands that do not fit into any other categories.
