@@ -12,18 +12,19 @@ All commands are prefixed with a `.`.
 ## Calculations and conversions
 These commands do not require any permissions.
 
-| Command       | Description | Syntax |
-| ------------- | ----------- | ------ |
-| **c**, calc   | Calculates an expression. | .c `5 + 5` |
-| **cur**       | Gets the exchange rate for a currency. | .cur `5` `USD` in `EUR` |
-| **length**    | Converts between units of length. | .length `100mm` |
-| **py**, py3   | Runs Python3 code. | .py \<code> |
-| **py2**       | Runs Python2 code. | .py2 \<code> |
-| **temp**      | Converts between units of temperature. | .temp `100K` |
-| **weight**    | Converts between units of weight. | .weight `5oz` |
+| Command       | Description | Syntax | Works on Discord |
+| ------------- | ----------- | ------ | ---------------- |
+| **c**, calc   | Calculates an expression. | .c `5 + 5` | Yes |
+| **cur**       | Gets the exchange rate for a currency. | .cur `5` `USD` in `EUR` | No |
+| **length**    | Converts between units of length. | .length `100mm` | No |
+| **py**, py3   | Runs Python3 code. | .py \<code> | Yes |
+| **py2**       | Runs Python2 code. | .py2 \<code> | Yes |
+| **temp**      | Converts between units of temperature. | .temp `100K` | No |
+| **weight**    | Converts between units of weight. | .weight `5oz` | No |
 
 ## Channel administration
-These commands require you have at least halfops in the channel.
+These commands require you have at least halfops in the channel. None of these
+commands work on Discord.
 
 | Command       | Description | Syntax |
 | ------------- | ----------- | ------ |
@@ -39,63 +40,65 @@ These commands require you have at least halfops in the channel.
 ## Fun and games
 These commands are fun to use and abuse&#x2122;!
 
-| Command       | Description | Syntax |
-| ------------- | ----------- | ------ |
-| **fortune**   | Tells you a fortune from the UNIX `fortune` command. | .fortune |
-| **lurk!** | Replies to you. Do not prefix this command with a `.`. | lurk! |
-| **r**, roulette | Play roulette: There is a 1 in 6 chance you will get hit. | .r |
-| **rate**      | Puts a rating into chat. | .rate \<score> \<comment> |
-| **slap**, shoot, whack, hit | Slaps a user. | .slap [user [object]] |
-| **yay** | Yay! This command may be used with the `.` prefix, however it is optional. | Yay! |
+| Command       | Description | Syntax | Works on Discord |
+| ------------- | ----------- | ------ | ---------------- |
+| **fortune**   | Tells you a fortune from the UNIX `fortune` command. | .fortune | Yes |
+| **lurk!** | Replies to you. Do not prefix this command with a `.`. | lurk! | Yes |
+| **r**, roulette | Play roulette: There is a 1 in 6 chance you will get hit. | .r | Yes |
+| **rate**      | Puts a rating into chat. | .rate \<score> \<comment> | Yes |
+| **slap**, shoot, whack, hit | Slaps a user. | .slap [user [object]] | Yes |
+| **yay** | Yay! This command may be used with the `.` prefix, however it is optional. | Yay! | Yes |
+| **qotd** | Displays a quote of the day. *Quotes of the day can be sarcastic and/or offensive, read at your own risk.* | .qotd | Yes |
+| **cal**, calendar | Displays a calendar for the current month. | .cal | Yes |
 
 ## Miscellaneous commands
 Useful commands that do not fit into any other categories.
 
-| Command       | Description | Syntax |
-| ------------- | ----------- | ------ |
-| **!**         | A prefix for DuckDuckGo! bangs. Do .! to see a list of subcommands. | .!ddg ubuntu |
-| **ping**      | Pings the bot. | .ping |
-| **privs**, privileges | Shows your privileges. | .privs [hostmask] |
-| **tell**, ask | Tells/asks a user something. | .tell \<user> \<message> |
-| **whoami**    | Tells you who the bot thinks you are. | .whoami |
+| Command       | Description | Syntax | Works on Discord |
+| ------------- | ----------- | ------ | ---------------- |
+| **!**         | A prefix for DuckDuckGo! bangs. Do .! to see a list of subcommands. | .!ddg ubuntu | No |
+| **ping**      | Pings the bot. | .ping | Yes |
+| **privs**, privileges | Shows your privileges. | .privs [hostmask] | No |
+| **tell**, ask | Tells/asks a user something. | .tell \<user> \<message> | No |
+| **whoami**    | Tells you who the bot thinks you are. | .whoami | Yes but useless |
 
 ## Random numbers
 
-| Command       | Description | Syntax |
-| ------------- | ----------- | ------ |
-| **d**, dice   | Rolls dice. | .d \<amount>d\<sides> |
-| **choose**    | Chooses between a set of options. | .choice \<option 1>, [option 2, [option 3, [...]]] |
-| **rand**      | Generates a random number, optionally between *min* and *max*. | .rand [[min] max] |
+| Command       | Description | Syntax | Works on Discord |
+| ------------- | ----------- | ------ | ---------------- |
+| **d**, dice   | Rolls dice. | .d \<amount>d\<sides> | Yes |
+| **choose**    | Chooses between a set of options. | .choice \<option 1>, [option 2, [option 3, [...]]] | Yes |
+| **rand**      | Generates a random number, optionally between *min* and *max*. | .rand [[min] max] | Yes |
 
 ## Text manipulation
 
-| Command       | Description | Syntax |
-| ------------- | ----------- | ------ |
-| **&aelig;**, ae | Adds *&aelig;* and *&oelig;* into text. | .ae \<text> |
-| **b64**, base64 | Encodes text into base64. | .base64 \<text> |
-| **b64d**, base64-d | Decodes base64-encoded text. | .base64-d \<base64> |
-| **lower**     | Converts text to lowercase. | .lower \<text> |
-| **rev**       | Reverses text. | .rev \<text> |
-| **silly**     | Randomizes capitalization througout the text | .silly \<text> |
-| **sillyae**   | A mix of *.silly* and *.&aelig;* | .sillyae \<text> |
-| **upper**     | Converts text to uppercase. | .upper \<text> |
+| Command       | Description | Syntax | Works on Discord |
+| ------------- | ----------- | ------ | ---------------- |
+| **&aelig;**, ae | Adds *&aelig;* and *&oelig;* into text. | .ae \<text> | Yes |
+| **b64**, base64 | Encodes text into base64. | .base64 \<text> | Yes |
+| **b64d**, base64-d | Decodes base64-encoded text. | .base64-d \<base64> | Yes |
+| **lower**     | Converts text to lowercase. | .lower \<text> | Yes |
+| **rev**       | Reverses text. | .rev \<text> | Yes |
+| **silly**     | Randomizes capitalization througout the text | .silly \<text> | Yes |
+| **sillyae**   | A mix of *.silly* and *.&aelig;* | .sillyae \<text> | Yes |
+| **upper**     | Converts text to uppercase. | .upper \<text> | Yes |
 
 ## Time
 Some commands are not shown here, as they do not have many uses.
 
-| Command       | Description | Syntax |
-| ------------- | ----------- | ------ |
-| **t**, time   | Gets the current time. | .t [tzdata timezone] |
-| **gettz**     | Gets your current timezone. | .gettz |
-| **settz**     | Sets your current timezone. If you don't know what timezone you are in, please visit https://sopel.chat/tz. | .settz \<tzdata timezone> |
-| **resettz**   | Resets your current timezone to the default. | .resettz |
-| **countdown** | Shows how long it is until midnight on the specified day. | .countdown \<YYYY> \<MM> \<DD> |
+| Command       | Description | Syntax | Works on Discord |
+| ------------- | ----------- | ------ | ---------------- |
+| **t**, time   | Gets the current time. | .t [tzdata timezone] | Yes |
+| **gettz**     | Gets your current timezone. | .gettz | No |
+| **settz**     | Sets your current timezone. If you don't know what timezone you are in, please visit https://sopel.chat/tz. | .settz \<tzdata timezone> | No |
+| **resettz**   | Resets your current timezone to the default. | .resettz | No |
+| **countdown** | Shows how long it is until midnight on the specified day. | .countdown \<YYYY> \<MM> \<DD> | Not well |
 
 ## Translating and spell checking
 These commands use [Google Translate](https://translate.google.com).
 
-| Command       | Description | Syntax |
-| ------------- | ----------- | ------ |
-| **spellcheck** | Checks the spelling of a word. | .spellcheck \<word> |
-| **tr**, translate | Translates text to/from another language. | .tr [:\<from> [:\<to>]] \<text> |
-| **mangle**    | Translates text to/from many languages, making it almost unreadable. | .mangle \<text> |
+| Command       | Description | Syntax | Works on Discord |
+| ------------- | ----------- | ------ | ---------------- |
+| **spellcheck** | Checks the spelling of a word. | .spellcheck \<word> | No |
+| **tr**, translate | Translates text to/from another language. | .tr [:\<from> [:\<to>]] \<text> | No |
+| **mangle**    | Translates text to/from many languages, making it almost unreadable. | .mangle \<text> | No |
