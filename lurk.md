@@ -101,5 +101,5 @@ These commands use [Google Translate](https://translate.google.com).
 | Command       | Description | Syntax | Works on Discord |
 | ------------- | ----------- | ------ | ---------------- |
 | **spellcheck** | Checks the spelling of a word. | .spellcheck \<word> | No |
-| **tr**, translate | Translates text to/from another language. | .tr [:\<from> [:\<to>]] \<text> | No |
+| **tr**, translate | Translates text to/from another language. | .tr [:\<from> [:\<to>]] \<text> | Yes |
 | **mangle**    | Translates text to/from many languages, making it almost unreadable. | .mangle \<text> | No |
