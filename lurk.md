@@ -90,9 +90,9 @@ Some commands are not shown here, as they do not have many uses.
 | Command       | Description | Syntax | Works on Discord |
 | ------------- | ----------- | ------ | ---------------- |
 | **t**, time   | Gets the current time. | .t [tzdata timezone] | Yes |
-| **gettz**     | Gets your current timezone. | .gettz | No |
-| **settz**     | Sets your current timezone. If you don't know what timezone you are in, please visit https://sopel.chat/tz. | .settz \<tzdata timezone> | No |
-| **resettz**   | Resets your current timezone to the default. | .resettz | No |
+| **gettz**     | Gets your current timezone. | .gettz | Yes |
+| **settz**     | Sets your current timezone. If you don't know what timezone you are in, please visit https://sopel.chat/tz. | .settz \<tzdata timezone> | Yes |
+| **resettz**   | Resets your current timezone to the default. | .resettz | Yes |
 | **countdown** | Shows how long it is until midnight on the specified day. | .countdown \<YYYY> \<MM> \<DD> | Not well |
 
 ## Translating and spell checking
