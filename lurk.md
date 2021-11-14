@@ -12,8 +12,8 @@ All commands are prefixed with a `.`.
 ## Calculations and conversions
 These commands do not require any permissions.
 
-| Command       | Description | Syntax | Works on Discord |
-| ------------- | ----------- | ------ | ---------------- |
+| Command       | Description | Syntax | Works on Discord and Matrix |
+| ------------- | ----------- | ------ | --------------------------- |
 | **c**, calc   | Calculates an expression. | .c `5 + 5` | Yes |
 | **cur**       | Gets the exchange rate for a currency. | .cur `5` `USD` in `EUR` | No |
 | **length**    | Converts between units of length. | .length `100mm` | Yes |
@@ -23,8 +23,8 @@ These commands do not require any permissions.
 | **weight**    | Converts between units of weight. | .weight `5oz` | Yes |
 
 ## Channel administration
-These commands require you have at least halfops in the channel. None of these
-commands work on Discord.
+These commands require you have at least halfops in the channel. These commands
+only work on IRC.
 
 | Command       | Description | Syntax |
 | ------------- | ----------- | ------ |
@@ -40,8 +40,8 @@ commands work on Discord.
 ## Fun and games
 These commands are fun to use and abuse&#x2122;!
 
-| Command       | Description | Syntax | Works on Discord |
-| ------------- | ----------- | ------ | ---------------- |
+| Command       | Description | Syntax | Works on Discord and Matrix |
+| ------------- | ----------- | ------ | --------------------------- |
 | **fortune**   | Tells you a fortune from the UNIX `fortune` command. | .fortune | Yes |
 | **lurk!** | Replies to you. Do not prefix this command with a `.`. | lurk! | Yes |
 | **r**, roulette | Play roulette: There is a 1 in 6 chance you will get hit. | .r | Yes |
@@ -55,8 +55,8 @@ These commands are fun to use and abuse&#x2122;!
 ## Miscellaneous commands
 Useful commands that do not fit into any other categories.
 
-| Command       | Description | Syntax | Works on Discord |
-| ------------- | ----------- | ------ | ---------------- |
+| Command       | Description | Syntax | Works on Discord and Matrix |
+| ------------- | ----------- | ------ | --------------------------- |
 | **!**         | A prefix for DuckDuckGo! bangs. Do .! to see a list of subcommands. | .!ddg ubuntu | No |
 | **ping**      | Pings the bot. | .ping | Yes |
 | **privs**, privileges | Shows your privileges. | .privs [hostmask] | No |
@@ -65,16 +65,16 @@ Useful commands that do not fit into any other categories.
 
 ## Random numbers
 
-| Command       | Description | Syntax | Works on Discord |
-| ------------- | ----------- | ------ | ---------------- |
+| Command       | Description | Syntax | Works on Discord and Matrix |
+| ------------- | ----------- | ------ | --------------------------- |
 | **d**, dice   | Rolls dice. | .d \<amount>d\<sides> | Yes |
 | **choose**    | Chooses between a set of options. | .choice \<option 1>, [option 2, [option 3, [...]]] | Yes |
 | **rand**      | Generates a random number, optionally between *min* and *max*. | .rand [[min] max] | Yes |
 
 ## Text manipulation
 
-| Command       | Description | Syntax | Works on Discord |
-| ------------- | ----------- | ------ | ---------------- |
+| Command       | Description | Syntax | Works on Discord and Matrix |
+| ------------- | ----------- | ------ | --------------------------- |
 | **&aelig;**, ae | Adds *&aelig;* and *&oelig;* into text. | .ae \<text> | Yes |
 | **b64**, base64 | Encodes text into base64. | .base64 \<text> | Yes |
 | **b64d**, base64-d | Decodes base64-encoded text. | .base64-d \<base64> | Yes |
@@ -87,8 +87,8 @@ Useful commands that do not fit into any other categories.
 ## Time
 Some commands are not shown here, as they do not have many uses.
 
-| Command       | Description | Syntax | Works on Discord |
-| ------------- | ----------- | ------ | ---------------- |
+| Command       | Description | Syntax | Works on Discord and Matrix |
+| ------------- | ----------- | ------ | --------------------------- |
 | **t**, time   | Gets the current time. | .t [tzdata timezone] | Yes |
 | **gettz**     | Gets your current timezone. | .gettz | Yes |
 | **settz**     | Sets your current timezone. If you don't know what timezone you are in, please visit https://sopel.chat/tz. | .settz \<tzdata timezone> | Yes |
@@ -98,8 +98,8 @@ Some commands are not shown here, as they do not have many uses.
 ## Translating and spell checking
 These commands use [Google Translate](https://translate.google.com).
 
-| Command       | Description | Syntax | Works on Discord |
-| ------------- | ----------- | ------ | ---------------- |
+| Command       | Description | Syntax | Works on Discord and Matrix |
+| ------------- | ----------- | ------ | --------------------------- |
 | **spellcheck** | Checks the spelling of a word. | .spellcheck \<word> | No |
 | **tr**, translate | Translates text to/from another language. | .tr [:\<from> [:\<to>]] \<text> | Yes |
 | **mangle**    | Translates text to/from many languages, making it almost unreadable. | .mangle \<text> | No |
