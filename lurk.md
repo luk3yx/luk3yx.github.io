@@ -80,7 +80,7 @@ Useful commands that do not fit into any other categories.
 | **b64d**, base64-d | Decodes base64-encoded text. | .base64-d \<base64> | Yes |
 | **lower**     | Converts text to lowercase. | .lower \<text> | Yes |
 | **rev**       | Reverses text. | .rev \<text> | Yes |
-| **silly**     | Randomizes capitalization througout the text | .silly \<text> | Yes |
+| **silly**     | Randomises capitalization throughout the text | .silly \<text> | Yes |
 | **sillyae**   | A mix of *.silly* and *.&aelig;* | .sillyae \<text> | Yes |
 | **upper**     | Converts text to uppercase. | .upper \<text> | Yes |
 
