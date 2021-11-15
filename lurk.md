@@ -10,6 +10,7 @@ All commands are prefixed with a `.`.
 *Do .help \<command> for more info*
 
 ## Calculations and conversions
+
 These commands do not require any permissions.
 
 | Command       | Description | Syntax | Works on Discord and Matrix |
@@ -23,6 +24,7 @@ These commands do not require any permissions.
 | **weight**    | Converts between units of weight. | .weight `5oz` | Yes |
 
 ## Channel administration
+
 These commands require you have at least halfops in the channel. These commands
 only work on IRC.
 
@@ -38,6 +40,7 @@ only work on IRC.
 | **unmute**, unquiet | Unmutes a user on the channel. | .unmute \<user> |
 
 ## Fun and games
+
 These commands are fun to use and abuse&#x2122;!
 
 | Command       | Description | Syntax | Works on Discord and Matrix |
@@ -53,6 +56,7 @@ These commands are fun to use and abuse&#x2122;!
 | **whip** | Whip | .whip <victim> | Yes |
 
 ## Miscellaneous commands
+
 Useful commands that do not fit into any other categories.
 
 | Command       | Description | Syntax | Works on Discord and Matrix |
@@ -85,6 +89,7 @@ Useful commands that do not fit into any other categories.
 | **upper**     | Converts text to uppercase. | .upper \<text> | Yes |
 
 ## Time
+
 Some commands are not shown here, as they do not have many uses.
 
 | Command       | Description | Syntax | Works on Discord and Matrix |
@@ -96,10 +101,12 @@ Some commands are not shown here, as they do not have many uses.
 | **countdown** | Shows how long it is until midnight on the specified day. | .countdown \<YYYY> \<MM> \<DD> | Not well |
 
 ## Translating and spell checking
-These commands use [Google Translate](https://translate.google.com).
+
+The .tr and .mangle commands use
+[Google Translate](https://translate.google.com).
 
 | Command       | Description | Syntax | Works on Discord and Matrix |
 | ------------- | ----------- | ------ | --------------------------- |
-| **spellcheck** | Checks the spelling of a word. | .spellcheck \<word> | No |
+| **spellcheck** | Checks the spelling of a word. | .spellcheck \<word> | Yes |
 | **tr**, translate | Translates text to/from another language. | .tr [:\<from> [:\<to>]] \<text> | Yes |
 | **mangle**    | Translates text to/from many languages, making it almost unreadable. | .mangle \<text> | No |
