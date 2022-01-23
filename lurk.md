@@ -16,7 +16,7 @@ These commands do not require any permissions.
 | Command       | Description | Syntax | Works on Discord and Matrix |
 | ------------- | ----------- | ------ | --------------------------- |
 | **c**, calc   | Calculates an expression. | .c `5 + 5` | Yes |
-| **cur**       | Gets the exchange rate for a currency. | .cur `5` `USD` in `EUR` | No |
+| **cur**       | Gets the exchange rate for a currency. | .cur `5` `USD` in `EUR` | Yes |
 | **length**    | Converts between units of length. | .length `100mm` | Yes |
 | **py**, py3   | Runs Python3 code. | .py \<code> | Yes |
 | **py2**       | Runs Python2 code. | .py2 \<code> | Yes |
