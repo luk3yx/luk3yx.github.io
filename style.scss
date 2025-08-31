@@ -33,7 +33,6 @@ html, body {
 }
 a {
     color: #0d47a1;
-    text-decoration: none;
 }
 h1 {
     font-size: 30px;
@@ -167,10 +166,6 @@ hr {
     padding: $padding;
     font-size: 1.5em;
     font-weight: 200;
-}
-
-a:hover {
-    text-decoration: underline;
 }
 
 .centre, .smallprint {
