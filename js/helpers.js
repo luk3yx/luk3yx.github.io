@@ -126,7 +126,6 @@ helpers = {
         'cardcover':        1,
         'card-generator':   2,
         'contextmenu':      1,
-        'cookies-accept':   1,
         'guess':            2,
         'handler':          2,
         'jsinfo':           2,
