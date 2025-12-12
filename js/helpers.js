@@ -133,6 +133,5 @@ helpers = {
         'load':             1,
         'ticker':           1,
         'translate':        1,
-        'youtube-cinema':   2,
     },
 };
